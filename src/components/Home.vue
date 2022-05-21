@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
     <div class="home">
-      <carousel>
+      <carousel @next="next" @prev="prev">
         <carouselItem v-for="(carItem, index) in carItems" :key="carItem" :index="index" :visibleItem="visibleItem">
           <img :src="carItem" alt="immagine carosello" />
         </carouselItem>
@@ -28,6 +28,25 @@ export default  {
       visibleItem: 0,
     }
   },
+
+  methods:  {
+    next(){
+      if (this.visibleItem == this.carItems.length - 1) {
+        this.visibleItem = 0;
+      } else {
+        this.visibleItem ++;
+      }
+    },
+    prev (){
+      if (this.visibleItem == 0) {
+        this.visibleItem = this.carItems.length - 1
+      } else {
+        this.visibleItem --;
+      }
+
+    },
+  },
+
   components:{
     carousel,
     carouselItem,
