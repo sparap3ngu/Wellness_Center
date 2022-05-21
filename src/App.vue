@@ -75,6 +75,9 @@ export default  {
     height: 100vh;
     border: 1px solid rgba(#000, .12);
   }
+  .md-app-content{
+    padding:0;
+  }
 
   .md-drawer {
   width: 250px;
