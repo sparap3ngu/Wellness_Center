@@ -2,12 +2,14 @@
   <div class="page-container">
     <div class="home">
       <carousel @next="next" @prev="prev">
-        <carouselItem v-for="(carItem, index) in carItems" 
-        :key="carItem" 
+        <carouselItem 
+        v-for="(carItem, index) in carItems" :key="carItem" 
         :index="index" 
         :visibleItem="visibleItem"
         :direction="direction">
+        <div class="imgContainer">
           <img :src="carItem" alt="immagine carosello" />
+        </div>
         </carouselItem>
       </carousel>
     </div>
@@ -59,8 +61,14 @@ export default  {
   }
 </script>
 
-
-
 <style scoped>
+  .imgContainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+  }
 
 </style>

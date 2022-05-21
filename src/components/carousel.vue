@@ -31,8 +31,6 @@ export default  {
   }
 </script>
 
-
-
 <style scoped>
     .carousel {
         position: relative;
@@ -40,7 +38,7 @@ export default  {
         height: 350px;
         overflow: hidden;
     }
-    
+
     button{
         position: absolute;
         top: calc(50% - 20px);
