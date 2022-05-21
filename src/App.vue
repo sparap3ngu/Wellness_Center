@@ -73,10 +73,10 @@ export default  {
 <style>
  .md-app {
     height: 100vh;
-    border: 1px solid rgba(#000, .12);
   }
   .md-app-content{
     padding:0;
+    border:0;
   }
 
   .md-drawer {
