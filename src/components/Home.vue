@@ -9,7 +9,7 @@
         :direction="direction">
         <div class="imgContainer">
           <img :src="carItem" alt="immagine carosello" />
-        </div>
+        </div>        
         </carouselItem>
       </carousel>
     </div>
@@ -62,13 +62,12 @@ export default  {
 </script>
 
 <style scoped>
-  .imgContainer {
+  #imgCarousel {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
+    min-width:100%;
+    max-width:none;
+    min-height: 350px;
+    max-height:none;
   }
 
 </style>
