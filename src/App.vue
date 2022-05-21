@@ -62,10 +62,8 @@
 <script>
 export default  {
   name: "App",
-  data: function () {
-    return {
+  data: {
       menuVisible: false,
-    };
   },
 }
 </script>
