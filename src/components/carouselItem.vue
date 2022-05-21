@@ -1,14 +1,19 @@
 <template>
-    <div class="carouselItem" v-show="visibleItem === index">
-        <slot></slot>
-    </div>
+
+        <transition :name="direction" mode="in-out">
+            <div v-show="visibleItem === index" class="carouselItem">
+                <slot></slot>
+            </div>
+        </transition>
+
 </template>
 
 <script>
 export default  {
     props: [
         'visibleItem',
-        'index'
+        'index',
+        'direction'
     ],
     data: function() {
         return {
@@ -19,4 +24,46 @@ export default  {
 </script>
 
 <style scoped>
+    .carouselItem  {
+        position: absolute;
+        left:0;
+        right:0;
+        top: -100%;
+        
+    }
+    .left-enter-active {
+        animation: leftInAnimation 0.4s ease-in-out
+    }
+    .left-leave-active {
+        animation: leftOutAnimation 0.4s ease-in-out     
+    }
+
+    @keyframes leftInAnimation {
+        from { transform: translateX(100%) }
+        to  { transform: translateX(0%) }
+    }
+
+    @keyframes leftOutAnimation {
+        from { transform: translateX(0%) }
+        to  { transform: translateX(-100%) }        
+    }
+
+        
+    .right-enter-active {
+        animation: rightInAnimation 0.4s ease-in-out
+    }
+    .right-leave-active {
+        animation: rightOutAnimation 0.4s ease-in-out     
+    }
+
+    @keyframes rightInAnimation {
+        from { transform: translateX(-100%) }
+        to  { transform: translateX(0%) }
+    }
+
+    @keyframes rightOutAnimation {
+        from { transform: translateX(0%) }
+        to  { transform: translateX(100%) }        
+    }
 </style>
+
