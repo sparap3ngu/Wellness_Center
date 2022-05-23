@@ -7,11 +7,21 @@
         :index="index" 
         :visibleItem="visibleItem"
         :direction="direction">
-        <div class="imgContainer">
-          <img :src="carItem" alt="immagine carosello" />
-        </div>        
+          <img id="imgCarousel" :src="carItem" alt="immagine carosello" />      
         </carouselItem>
       </carousel>
+
+      <div class="newsletter">
+        <h3>Iscrivi alla newsletter</h3>
+        <p>
+          Resta sempre aggiornato sulle nostre promozioni e novità!
+        </p>
+        <md-field >
+          <md-input placeholder="Inserisci la tua email"></md-input>
+        </md-field>
+
+        
+      </div>
     </div>
   </div>
 </template>
@@ -63,11 +73,23 @@ export default  {
 
 <style scoped>
   #imgCarousel {
-    position: absolute;
-    min-width:100%;
-    max-width:none;
     min-height: 350px;
-    max-height:none;
+    min-width: 700px;
+    vertical-align: middle;
   }
+
+  .newsletter  {
+    height: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: grey;
+  }
+
+  .newsletter h3, p  {
+    padding-top: 15px;
+    margin: 0px;
+    text-align: center;
+  }
+
 
 </style>
