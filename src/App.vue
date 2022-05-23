@@ -53,7 +53,30 @@
    
     <md-app-content>
         <router-view />
+            
+        <footer>
+          <div class="footer">
+            <p>
+              WELNESSCENTER - 
+              Via Calepina, 14 - I-38122 Trento - 
+              P.IVA-C.F. 00340520220 - 
+              Reception +39 0461 281111 - 
+              info@wellnesscenter.it - 
+              www.wellnesscenter.it
+            </p>
+            <hr>
+            <h6> Created by</h6>
+            <p>
+              Giulia Mussetti
+              Lorenzo Porta
+              Milena Paniz
+            </p>
+
+          </div>
+        </footer>
     </md-app-content>
+
+
   </md-app>
   </div>
   
@@ -98,6 +121,17 @@ export default  {
     #toolbar {
       display: none;
     }
+  }
+
+  .footer {
+    background: grey;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .footer h6 {
+    margin-top: 14px;
+    margin-bottom:0;
   }
 </style>
 
