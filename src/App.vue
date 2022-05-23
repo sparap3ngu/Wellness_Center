@@ -67,9 +67,9 @@
             <hr>
             <h6> Created by</h6>
             <p>
-              Giulia Mussetti
-              Lorenzo Porta
-              Milena Paniz
+              Giulia Mussetti <a href="https://www.instagram.com/_free.soul__/"><img src="https://cdn.icon-icons.com/icons2/2715/PNG/512/instagram_logo_icon_172387.png" alt="logo instagram"></a>
+              - Lorenzo Porta <a href=""><img src="https://cdn.icon-icons.com/icons2/2715/PNG/512/instagram_logo_icon_172387.png" alt="logo instagram"></a>
+              - Milena Paniz <a href="https://www.instagram.com/milenapaniz/"><img src="https://cdn.icon-icons.com/icons2/2715/PNG/512/instagram_logo_icon_172387.png" alt="logo instagram"></a>
             </p>
 
           </div>
@@ -124,7 +124,7 @@ export default  {
   }
 
   .footer {
-    background: grey;
+    background: #cccccc;
     text-align: center;
     padding: 10px;
   }
@@ -132,6 +132,10 @@ export default  {
   .footer h6 {
     margin-top: 14px;
     margin-bottom:0;
+  }
+
+  a img {
+    width:20px;
   }
 </style>
 
