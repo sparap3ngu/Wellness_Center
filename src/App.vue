@@ -89,13 +89,13 @@ export default  {
     height: auto
   }
   
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 620px) {
     #menu {
       display: none;
     }
   }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 620px) {
     #toolbar {
       display: none;
     }
