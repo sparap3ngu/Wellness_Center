@@ -40,6 +40,9 @@
         </md-toolbar>
 
         <md-list >
+          <md-list-item to="/home">
+            <span class="md-list-item-text">Home</span>
+          </md-list-item>
           <md-list-item to="/trattamenti">
             <span class="md-list-item-text">Trattamenti</span>
           </md-list-item>
