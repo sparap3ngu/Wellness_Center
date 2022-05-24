@@ -22,6 +22,7 @@
       </div> --> 
 
         <div id="toolbar" class="md-toolbar-section-end">
+            <md-button class="toolbarButton" to="/home">Home</md-button>
             <md-button class="toolbarButton" to="/trattamenti" >Trattamenti</md-button>
             <md-button class="toolbarButton" to="/servizi">Servizi</md-button>
             <md-button class="toolbarButton" to="contatti">Contatti</md-button>
