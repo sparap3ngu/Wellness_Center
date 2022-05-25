@@ -90,6 +90,8 @@ export default  {
               'utente':doc.data().utente,
               'descrizione': doc.data().descrizione,
             }
+            this.Recensioni.push(data)
+
         });
     });
   },
