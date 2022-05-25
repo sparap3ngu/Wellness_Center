@@ -25,8 +25,8 @@
     </div>
 
 <!--Corpo testuale della home-->
-    <div id="chiSiamo">
-      <div class="md-layout md-gutter">
+    <div>
+      <div id="chiSiamo" class="md-layout md-gutter">
       <div class="md-layout-item md-large-size-33 md-medium-size-100 md-xsmall-size-100">
         <h1> Chi siamo </h1>
         <p>
@@ -89,7 +89,7 @@
 <script>
 import carousel from './carousel.vue'
 import carouselItem from './carouselItem.vue'
-import db from '../main.js'
+
 
 export default  {
   data: function () {
@@ -101,26 +101,8 @@ export default  {
       ],
       visibleItem: 0,
       direction: 'left',
-      recensioni: [],
-      
     }
   },
-  created()  {
-      db.collection  ("Recensioni")
-      .get()
-      .then(function(res) {
-         res.forEach(function(doc)   {
-          console.log(doc.data()) ;
-          const data = {
-            'id': doc.id,
-            'utente': doc.data().utente,
-            'descrizione': doc.data().descrizione,
-          }
-          this.recensioni.push(data)
-        })
-      })
-    },
-
 
   methods:  {
     next(){
@@ -172,16 +154,19 @@ export default  {
 
   #chiSiamo{
     text-align: center;
+    padding: 10px;
   }
 
   .md-layout {
     margin:10px;
   }
+
   iframe  {
     width:600;
     height:450;
     border:0; 
   }
+  
   .scriviRec {
     margin-top: 10px;
     margin-bottom:10px;
