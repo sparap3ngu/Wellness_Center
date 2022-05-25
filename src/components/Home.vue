@@ -177,4 +177,33 @@ export default  {
     height:450;
     border:0; 
   }
+
+    .scriviRec {
+    margin-top: 10px;
+    margin-bottom:10px;
+  }  
+  .leggiRec {
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: rgba(0,0,0,0.42);
+    overflow: scroll;
+    height: 116px;
+    margin-top:10px;
+    text-align: left;
+  }
+
+  .unaRec {
+    background-color: #cccccc;
+    height: 50px;
+    border-radius: 3px;
+    margin: 7px;
+  }
+
+  .unaRec h5 {
+    margin:0 10px;
+  }
+
+  .nomeUtente {
+    display:inline;
+  }
 </style>
