@@ -52,11 +52,4 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-    db.collection("Recensioni")
-    .get()
-    .then(function(res) {
-        res.forEach(function(doc) {
-            console.log(doc.id, " => ", doc.data());
-        });
-    });
-
+export default db;
