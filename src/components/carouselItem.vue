@@ -23,9 +23,8 @@ export default  {
 
 <style scoped>
     .carouselItem  {
-        position: absolute;
-        left:0;
-        right:0;
+        /*height: 500px;*/
+        width: 100%;
     }
     .left-enter-active {
         animation: leftInAnimation 0.4s ease-in-out
