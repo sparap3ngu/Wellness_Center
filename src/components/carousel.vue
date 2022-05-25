@@ -35,8 +35,8 @@ export default  {
     .carousel {
         position: relative;
         width:100%;
-        height: 350px;
-        overflow: hidden;
+        /*height: 500px;
+        overflow: hidden;*/
     }
 
     button{
