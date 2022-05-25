@@ -68,14 +68,20 @@
       </div>
       <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
         <div class="leggiRec">
-          <div class="unaRec" 
-            v-for="recensione in recensioni" 
-            :key="recensione.id"> 
+         <div class="unaRec"  
+          v-for="r in Recensioni" 
+            :key="r.id"> 
               <h5 class="nomeUtente">Nome utente:</h5>
-              <p class="nomeUtente"> {{recensione.utente}}</p>
+              <p class="nomeUtente"> {{r.utente}}</p>
               <hr>
-              <p> {{recensione.descrizione}}</p>
-            </div>
+              <p> {{r.descrizione}}</p>
+          </div> 
+        <!--<div class="unaRec"> 
+              <h5 class="nomeUtente">Nome utente:</h5>
+              <p class="nomeUtente"></p>
+              <hr>
+              <p></p>
+          </div>--> 
         </div>   
       </div>
       </div>
@@ -194,7 +200,7 @@ export default  {
 
   .unaRec {
     background-color: #cccccc;
-    height: 50px;
+    height: auto;
     border-radius: 3px;
     margin: 7px;
   }
