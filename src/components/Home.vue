@@ -56,6 +56,29 @@
       </div>
     </div>
     </div>
+
+<!--Sezione recensioni-->
+      <div class="md-layout md-gutter ">
+
+      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
+         <md-field class="scriviRec">
+            <label>Lascia una recensione</label>
+            <md-textarea v-model="textarea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse recusandae praesentium molestiae ex amet magni accusantium, deleniti quo non qui, eius, necessitatibus impedit dolore blanditiis ab dolorem. Exercitationem, blanditiis nam.</md-textarea>
+          </md-field>
+      </div>
+      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
+        <div class="leggiRec">
+          <div class="unaRec" 
+            v-for="recensione in recensioni" 
+            :key="recensione.id"> 
+              <h5 class="nomeUtente">Nome utente:</h5>
+              <p class="nomeUtente"> {{recensione.utente}}</p>
+              <hr>
+              <p> {{recensione.descrizione}}</p>
+            </div>
+        </div>   
+      </div>
+      </div>
   </div>
 </template>
 
