@@ -66,17 +66,6 @@
       </div>
       <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
         <div class="leggiRec">
-
-            <div class="unaRec" 
-            v-for="recensione in recensioni" 
-            :key="recensione.id"> 
-              <h5 class="nomeUtente">Nome utente:</h5>
-              <p class="nomeUtente"> {{recensione.utente}}</p>
-              <hr>
-              <p> {{recensione.descrizione}}</p>
-            </div>
-
-
         </div>   
       </div>
       </div>
