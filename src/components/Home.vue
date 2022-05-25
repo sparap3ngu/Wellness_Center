@@ -25,8 +25,8 @@
     </div>
 
 <!--Corpo testuale della home-->
-    <div>
-      <div id="chiSiamo" class="md-layout md-gutter">
+    <div id="chiSiamo">
+      <div class="md-layout md-gutter">
       <div class="md-layout-item md-large-size-33 md-medium-size-100 md-xsmall-size-100">
         <h1> Chi siamo </h1>
         <p>
@@ -54,6 +54,33 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
+
+<!--Sezione recensioni-->
+      <div class="md-layout md-gutter ">
+
+      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
+         <md-field class="scriviRec">
+            <label>Lascia una recensione</label>
+            <md-textarea v-model="textarea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse recusandae praesentium molestiae ex amet magni accusantium, deleniti quo non qui, eius, necessitatibus impedit dolore blanditiis ab dolorem. Exercitationem, blanditiis nam.</md-textarea>
+          </md-field>
+      </div>
+      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
+        <div class="leggiRec">
+
+            <div class="unaRec" 
+            v-for="recensione in recensioni" 
+            :key="recensione.id"> 
+              <h5 class="nomeUtente">Nome utente:</h5>
+              <p class="nomeUtente"> {{recensione.utente}}</p>
+              <hr>
+              <p> {{recensione.descrizione}}</p>
+            </div>
+
+
+        </div>   
+      </div>
+      </div>
+
     </div>
     </div>
   </div>
@@ -62,7 +89,7 @@
 <script>
 import carousel from './carousel.vue'
 import carouselItem from './carouselItem.vue'
-
+import db from '../main.js'
 
 export default  {
   data: function () {
@@ -74,8 +101,26 @@ export default  {
       ],
       visibleItem: 0,
       direction: 'left',
+      recensioni: [],
+      
     }
   },
+  created()  {
+      db.collection  ("Recensioni")
+      .get()
+      .then(function(res) {
+         res.forEach(function(doc)   {
+          console.log(doc.data()) ;
+          const data = {
+            'id': doc.id,
+            'utente': doc.data().utente,
+            'descrizione': doc.data().descrizione,
+          }
+          this.recensioni.push(data)
+        })
+      })
+    },
+
 
   methods:  {
     next(){
@@ -107,7 +152,7 @@ export default  {
 <style scoped>
   #imgCarousel {
     min-height: 350px;
-    min-width: 700px;
+   /* min-width: 700px;*/
     vertical-align: middle;
   }
 
@@ -116,7 +161,7 @@ export default  {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 1px;
-    background-color: grey;
+    background-color: #cccccc;
   }
 
   .newsletter h3, p  {
@@ -127,12 +172,42 @@ export default  {
 
   #chiSiamo{
     text-align: center;
-    padding: 10px;
   }
 
+  .md-layout {
+    margin:10px;
+  }
   iframe  {
     width:600;
     height:450;
     border:0; 
+  }
+  .scriviRec {
+    margin-top: 10px;
+    margin-bottom:10px;
+  }  
+  .leggiRec {
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: rgba(0,0,0,0.42);
+    overflow: scroll;
+    height: 116px;
+    margin-top:10px;
+    text-align: left;
+  }
+
+  .unaRec {
+    background-color: #cccccc;
+    height: 50px;
+    border-radius: 3px;
+    margin: 7px;
+  }
+
+  .unaRec h5 {
+    margin:0 10px;
+  }
+
+  .nomeUtente {
+    display:inline;
   }
 </style>
