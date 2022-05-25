@@ -74,6 +74,7 @@ export default  {
       ],
       visibleItem: 0,
       direction: 'left',
+      Recensioni: [],
     }
   },
 
