@@ -52,11 +52,19 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-    db.collection("Recensioni")
+export default firebase.initializeApp(firebaseConfig).firestore();
+
+/* OPPURE
+ const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+ export default firebaseApp.firestore();
+ */
+
+ /*    db.collection("Recensioni")
     .get()
     .then(function(res) {
         res.forEach(function(doc) {
             console.log(doc.id, " => ", doc.data());
         });
     });
-
+    */
