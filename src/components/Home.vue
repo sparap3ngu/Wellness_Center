@@ -62,6 +62,7 @@
 <script>
 import carousel from './carousel.vue'
 import carouselItem from './carouselItem.vue'
+import db from '../main.js'
 
 
 export default  {
@@ -76,6 +77,21 @@ export default  {
       direction: 'left',
       Recensioni: [],
     }
+  },
+
+  created () {
+    db.collection ('Recensioni')
+    .get()
+    .then(function(res) {
+        res.forEach(function(doc) {
+            console.log(doc.id, " => ", doc.data());
+            const data = {
+              'id': doc.id,
+              'utente':doc.data().utente,
+              'descrizione': doc.data().descrizione,
+            }
+        });
+    });
   },
 
   methods:  {
