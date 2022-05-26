@@ -10,11 +10,6 @@
           <img :src="s.immagine" alt="People">
         </md-card-media>
 
-      <!--<md-card>
-        <md-card-media>
-          <img src="/vuematerial/assets/examples/card-image-1.jpg" alt="People">
-        </md-card-media>-->
-
         <md-card-header>
           <div class="md-title">{{s.nome}} </div>
           <div class="md-subhead"> {{s.costo}}</div>
@@ -33,84 +28,42 @@
 </template>
 
 <script>
-export default  {
+import db from '../main'
 
+export default  {
     data: function () {
       return{
          Servizi: [
-        {
+        /*{
           id: 1,
           nome: 'Acqua termale',
           costo: '70€',
           immagine: 'https://www.termemerano.it/fileadmin/_processed_/a/3/csm__DSC4366_2af557342e.jpg',
-        },
+        },*/
 
-        {
-          id:2,
-          nome: 'bagno termale',
-          costo: '70€',
-          immagine: 'https://www.termemerano.it/fileadmin/_processed_/0/5/csm__DSC4292_4c585c7410.jpg'
-        },
-
-        {
-          id:3,
-          nome: 'palestra',
-          costo: '40€',
-          immagine: 'https://www.termemerano.it/fileadmin/_processed_/0/6/csm_terme_fitness_--11_f5d37ab9ad.jpg',
-        },
-        {
-          id:3,
-          nome: 'palestra',
-          costo: '40€',
-          immagine: 'https://www.termemerano.it/fileadmin/_processed_/0/6/csm_terme_fitness_--11_f5d37ab9ad.jpg',
-        },
-                {
-          id:3,
-          nome: 'palestra',
-          costo: '40€',
-          immagine: 'https://www.termemerano.it/fileadmin/_processed_/0/6/csm_terme_fitness_--11_f5d37ab9ad.jpg',
-        },
-                {
-          id:3,
-          nome: 'palestra',
-          costo: '40€',
-          immagine: 'https://www.termemerano.it/fileadmin/_processed_/0/6/csm_terme_fitness_--11_f5d37ab9ad.jpg',
-        },
-                {
-          id:3,
-          nome: 'palestra',
-          costo: '40€',
-          immagine: 'https://www.termemerano.it/fileadmin/_processed_/0/6/csm_terme_fitness_--11_f5d37ab9ad.jpg',
-        },
-                {
-          id:3,
-          nome: 'palestra',
-          costo: '40€',
-          immagine: 'https://www.termemerano.it/fileadmin/_processed_/0/6/csm_terme_fitness_--11_f5d37ab9ad.jpg',
-        }
       ]
       }
-     
     },
 
-created () {
+  created () {
   db.collection ('Servizi')
     .get()
-    .then(function(res) {
-        res.forEach(function(doc) {
-            console.log(doc.id, " => ",  doc.data());
-            const data = {
-              'id': doc.id,
-              'nome': doc.data().nome,
-              'costo':doc.data().costo,
-              'immagine': doc.data().immagine,
-            }
-            this.Servizi.push(data)
+    .then(querySnapshot => {
+      querySnapshot.forEach (doc => {
+        const data =  {
+          'immagine': doc.data().immagine,
+          'nome': doc.data().nome,
+          'costo': doc.data().costo,
+        }
+        this.Servizi.push(data)
+      })
+    }) 
 
-        });
-    });
-}
   }
+}
+
+
+
 </script>
 
 
