@@ -14,6 +14,8 @@ import Dettaglio from './components/Dettaglio.vue'
 import Home from './components/Home.vue'
 import Servizi from './components/Servizi.vue'
 import Trattamenti from './components/Trattamenti.vue'
+import tratt from './components/tratt.vue'
+import mass from './components/mass.vue'
 
 
 Vue.use(VueCompositionAPI)
@@ -31,6 +33,8 @@ const router = new VueRouter({
     { path: '/dettaglio', name: 'dettaglio', component: Dettaglio},
     { path: '/servizi', name: 'servizi', component: Servizi},
     { path: '/trattamenti', name: 'trattamenti', component: Trattamenti},
+    { path: '/tratt', name: '/tratt', component: tratt },
+    { path: '/mass', name: '/mass', component: mass},
   ]
 })
 
