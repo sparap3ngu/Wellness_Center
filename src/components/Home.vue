@@ -70,26 +70,16 @@
       <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
         <div class="leggiRec">
           
-          <!--PROBLEMA DI VISUALIZZAZIONE-->
-        <!-- <div class="unaRec"  
+          <div class="unaRec"  
           v-for="r in Recensioni" 
           :key="r.id"> 
               <h5 class="nomeUtente">Nome utente:</h5>
               <p class="nomeUtente"> {{r.utente}} </p>
               <hr>
-              <p> {{r.descrizione}}</p>
-            </div> 
--->
-          <div class="unaRec" 
-          > 
-              <h5 class="nomeUtente">Nome utente:</h5>
-              <p class="nomeUtente">  </p>
-              <hr>
-              <p> </p>
-          </div>   
-                    </div>   
-
-      </div>
+              <p> {{r.descrizione}}</p>  
+            </div>
+          </div>  
+        </div> 
       </div>
   </div>
 </template>
@@ -115,21 +105,20 @@ export default  {
   },
 
   created () {
-    db.collection ('Recensioni')
+  db.collection ('Recensioni')
     .get()
-    .then(function(res) {
-        res.forEach(function(doc) {
-            console.log(doc.id, " => ",  doc.data());
-            const data = {
-              'id': doc.id,
-              'utente':doc.data().utente,
-              'descrizione': doc.data().descrizione,
-            }
-            this.Recensioni.push(data)
+    .then(querySnapshot => {
+      querySnapshot.forEach (doc => {
+        const data =  {
+          'utente': doc.data().utente,
+          'descrizione': doc.data().descrizione,
+        }
+        this.Recensioni.push(data)
+      })
+    }) 
 
-        });
-    });
   },
+
 
   methods:  {
     next(){
