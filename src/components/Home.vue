@@ -71,15 +71,24 @@
         <div class="leggiRec">
           
           <!--PROBLEMA DI VISUALIZZAZIONE-->
-         <div class="unaRec"  
+        <!-- <div class="unaRec"  
           v-for="r in Recensioni" 
           :key="r.id"> 
               <h5 class="nomeUtente">Nome utente:</h5>
               <p class="nomeUtente"> {{r.utente}} </p>
               <hr>
               <p> {{r.descrizione}}</p>
-          </div> 
-        </div>   
+            </div> 
+-->
+          <div class="unaRec" 
+          > 
+              <h5 class="nomeUtente">Nome utente:</h5>
+              <p class="nomeUtente">  </p>
+              <hr>
+              <p> </p>
+          </div>   
+                    </div>   
+
       </div>
       </div>
   </div>
