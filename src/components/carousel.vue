@@ -34,12 +34,12 @@ export default  {
 <style scoped>
     .carousel {
         position: relative;
-        width:100%;
-        /*height: 500px;
-        overflow: hidden;*/
+        overflow: hidden;
+        width: 100%;
+        height: 350px;
     }
 
-    button{
+    button {
         position: absolute;
         top: calc(50% - 20px);
         opacity:0.6;

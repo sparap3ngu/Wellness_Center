@@ -11,7 +11,7 @@ export default  {
     props: [
         'visibleItem',
         'index',
-        'direction'
+        'direction',
     ],
     data: function() {
         return {
@@ -23,9 +23,25 @@ export default  {
 
 <style scoped>
     .carouselItem  {
-        /*height: 500px;*/
-        width: 100%;
+        position: absolute;
+        top:0;
+        /*left: -50%;*/
+        bottom:0;
     }
+
+    @media only screen and (min-width: 620px) {
+    .carouselItem{
+        left:-50%;
+    }
+  }
+
+    @media only screen and (max-width: 620px) {
+    .carouselItem {
+        left:-100%;
+    }
+  }
+    
+    
     .left-enter-active {
         animation: leftInAnimation 0.4s ease-in-out
     }
