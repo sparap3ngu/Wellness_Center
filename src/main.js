@@ -14,6 +14,10 @@ import Dettaglio from './components/Dettaglio.vue'
 import Home from './components/Home.vue'
 import Servizi from './components/Servizi.vue'
 import Trattamenti from './components/Trattamenti.vue'
+import massaggi from './components/massaggi.vue'
+import altro from './components/altro.vue'
+
+
 
 
 
@@ -32,6 +36,10 @@ const router = new VueRouter({
     { path: '/dettaglio', name: 'dettaglio', component: Dettaglio},
     { path: '/servizi', name: 'servizi', component: Servizi},
     { path: '/trattamenti', name: 'trattamenti', component: Trattamenti},
+    { path: '/massaggi', name: 'massaggi', component: massaggi},
+    { path: '/altro', name: 'altro', component: altro},
+
+
 
   ]
 })
