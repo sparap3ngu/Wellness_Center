@@ -70,6 +70,7 @@
       <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
         <div class="leggiRec">
           
+          <!--PROBLEMA DI VISUALIZZAZIONE-->
          <div class="unaRec"  
           v-for="r in Recensioni" 
           :key="r.id"> 
