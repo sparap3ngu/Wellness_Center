@@ -2,12 +2,12 @@
   <div class="page-container">
 
     <div class="md-layout" >
-      <div class="md-layout-item md-large-size-20 md-medium-size-33 md-xsmall-size-100" 
-      v-for="s in Servizi" :key="s.id">
+      <div class="md-layout-item md-large-size-20 md-xlarge-size-20 md-medium-size-33 md-xsmall-size-100" 
+      v-for="s in Massaggi" :key="s.id">
         <div >
       <md-card id="cards">
-        <md-card-media>
-          <img :src="s.immagine" alt="People">
+        <md-card-media class="immagini">
+          <img id="immagini" :src="s.immagine" alt="People" >
         </md-card-media>
 
         <md-card-header>
@@ -33,7 +33,7 @@ import db from '../main'
 export default  {
     data: function () {
       return{
-         Servizi: [
+         Massaggi: [
         /*{
           id: 1,
           nome: 'Acqua termale',
@@ -46,7 +46,7 @@ export default  {
     },
 
   created () {
-  db.collection ('Servizi')
+  db.collection ('Massaggi')
     .get()
     .then(querySnapshot => {
       querySnapshot.forEach (doc => {
@@ -55,7 +55,7 @@ export default  {
           'nome': doc.data().nome,
           'costo': doc.data().costo,
         }
-        this.Servizi.push(data)
+        this.Massaggi.push(data)
       })
     }) 
 
@@ -71,10 +71,21 @@ export default  {
 
 #cards{
   margin-top:40px;
+
 }
  .md-card-header {
   height:100px;
 }  
+
+.immagini  {
+  height: 200px;
+  overflow: hidden;
+}
+
+#immagini {
+  /*height:100%;*/
+}
+
 
 
 
