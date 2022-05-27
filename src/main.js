@@ -38,9 +38,6 @@ const router = new VueRouter({
     { path: '/trattamenti', name: 'trattamenti', component: Trattamenti},
     { path: '/trattamenti/massaggi', name: 'trattamenti/massaggi', component: massaggi},
     { path: '/trattamenti/altro', name: 'trattamenti/altro', component: altro},
-
-
-
   ]
 })
 
@@ -62,4 +59,5 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-export default firebase.initializeApp(firebaseConfig).firestore();
+export default db;
+//export default router;

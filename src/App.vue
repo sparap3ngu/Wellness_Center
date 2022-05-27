@@ -30,10 +30,10 @@
               <md-button class="toolbarButton" to="contatti">Contatti</md-button>
           </div>
         </div>
-
+ 
        <div class="md-toolbar-row">
-          <md-tabs class="md-primary md-toolbar-section-end" md-alignment="fixed">
-            <md-tab id="tab-massaggi" md-label="Massaggi" to="/trattamenti/massaggi"> </md-tab>
+          <md-tabs class="md-primary md-toolbar-section-end" md-alignment="fixed" >
+            <md-tab id="tab-massaggi" md-label="Massaggi" to="/trattamenti/massaggi" exact> </md-tab>
             <md-tab id="tab-altro" md-label="Altro" to="/trattamenti/altro"> </md-tab>
           </md-tabs>
 
@@ -78,6 +78,8 @@
 </template>
 
 <script>
+//import router from './main.js'
+
 export default  {
   name: "App",
   data: function(){
