@@ -63,9 +63,9 @@
       <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
          <md-field class="scriviRec">
             <label>Lascia una recensione</label>
-            <md-textarea v-model="textarea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse recusandae praesentium molestiae ex amet magni accusantium, deleniti quo non qui, eius, necessitatibus impedit dolore blanditiis ab dolorem. Exercitationem, blanditiis nam.</md-textarea>
+            <md-textarea v-model="textarea"></md-textarea>
           </md-field>
-          <md-button> Invia </md-button>
+          <md-button @click="addRecensione(rec)"> Invia </md-button>
       </div>
       <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
         <div class="leggiRec">
@@ -101,6 +101,12 @@ export default  {
       visibleItem: 0,
       direction: 'left',
       Recensioni: [],
+      rec:[
+        {
+          utente: 'Giulia',
+          descrizione: 'Belizimo!'
+        }
+      ],
     }
   },
 
@@ -108,7 +114,7 @@ export default  {
   db.collection ('Recensioni')
     .get()
     .then(querySnapshot => {
-      querySnapshot.forEach (doc => {
+      querySnapshot.forEach (doc =>  {
         const data =  {
           'utente': doc.data().utente,
           'descrizione': doc.data().descrizione,
@@ -137,6 +143,13 @@ export default  {
       }
       this.direction = 'right'
     },
+    addRecensione (rec){
+      db.collection("Recensioni")
+        .add({
+            //utente: rec.utente,
+            descrizione: rec.descrizione,
+            });
+    }
   },
 
   components:{
