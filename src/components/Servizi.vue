@@ -1,9 +1,11 @@
 <template>
   <div class="page-container">
 
+    <h1> Scopri tutti i nostri servizi! </h1>
+
     <div class="md-layout" >
       <div class="md-layout-item md-large-size-20 md-xlarge-size-20 md-medium-size-33 md-xsmall-size-100" 
-      v-for="s in Massaggi" :key="s.id">
+      v-for="s in Servizi" :key="s.id">
         <div >
       <md-card id="cards">
         <md-card-media class="immagini">
@@ -33,20 +35,12 @@ import db from '../main'
 export default  {
     data: function () {
       return{
-         Massaggi: [
-        /*{
-          id: 1,
-          nome: 'Acqua termale',
-          costo: '70€',
-          immagine: 'https://www.termemerano.it/fileadmin/_processed_/a/3/csm__DSC4366_2af557342e.jpg',
-        },*/
-
-      ]
+         Servizi: []
       }
     },
 
   created () {
-  db.collection ('Massaggi')
+  db.collection ('Servizi')
     .get()
     .then(querySnapshot => {
       querySnapshot.forEach (doc => {
@@ -55,19 +49,21 @@ export default  {
           'nome': doc.data().nome,
           'costo': doc.data().costo,
         }
-        this.Massaggi.push(data)
+        this.Servizi.push(data)
       })
     }) 
 
   }
 }
-
-
-
 </script>
 
 
 <style scoped>
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
 
 #cards{
   margin-top:40px;

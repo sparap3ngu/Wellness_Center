@@ -61,6 +61,8 @@ export default  {
 <style scoped>
 h1{
     text-align: center;
+    margin-top: 50px;
+
 }
 #cards{
   margin-top:40px;

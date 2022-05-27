@@ -119,7 +119,6 @@ export default  {
     .get()
     .then(function(res) {
         res.forEach(function(doc) {
-            console.log(doc.id, " => ",  doc.data());
             const data = {
               'id': doc.id,
               'utente':doc.data().utente,
