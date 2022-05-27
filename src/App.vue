@@ -25,22 +25,19 @@
 
           <div id="toolbar" class="md-toolbar-section-end">
               <md-button class="toolbarButton" to="/home">Home</md-button>
-              <md-button class="toolbarButton" to="/trattamenti" >Trattamenti</md-button>
+              <md-button class="toolbarButton" to="/trattamenti/massaggi" >Trattamenti</md-button>
               <md-button class="toolbarButton" to="/servizi">Servizi</md-button>
               <md-button class="toolbarButton" to="contatti">Contatti</md-button>
           </div>
         </div>
  
-       <div class="md-toolbar-row">
+       <!--div class="md-toolbar-row">
           <md-tabs class="md-primary md-toolbar-section-end" md-alignment="fixed" >
             <md-tab id="tab-massaggi" md-label="Massaggi" to="/trattamenti/massaggi" exact> </md-tab>
             <md-tab id="tab-altro" md-label="Altro" to="/trattamenti/altro"> </md-tab>
           </md-tabs>
-
-       </div>
-         
-
-
+       </!--div-->
+       
     </md-app-toolbar>
 
     <md-app-drawer :md-active.sync="menuVisible">
@@ -57,7 +54,7 @@
           <md-list-item to="/home">
             <span class="md-list-item-text">Home</span>
           </md-list-item>
-          <md-list-item to="/trattamenti">
+          <md-list-item to="/trattamenti/massaggi">
             <span class="md-list-item-text">Trattamenti</span>
           </md-list-item>
           <md-list-item to="/servizi">

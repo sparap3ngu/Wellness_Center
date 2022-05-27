@@ -1,5 +1,9 @@
 <template>
   <div class="page-container">
+     <md-tabs class="md-primary" md-alignment="fixed" md-active-tab="tab-altro">
+            <md-tab id="tab-massaggi" md-label="Massaggi" to="/trattamenti/massaggi"> </md-tab>
+            <md-tab id="tab-altro" md-label="Altro" to="/trattamenti/altro" exact> </md-tab>
+          </md-tabs>
 
       <h1> Altri trattamenti </h1>
 
