@@ -13,7 +13,11 @@ import Contatti from './components/Contatti.vue'
 import Dettaglio from './components/Dettaglio.vue'
 import Home from './components/Home.vue'
 import Servizi from './components/Servizi.vue'
-import Trattamenti from './components/Trattamenti.vue'
+import massaggi from './components/massaggi.vue'
+import altro from './components/altro.vue'
+
+
+
 
 
 Vue.use(VueCompositionAPI)
@@ -30,7 +34,8 @@ const router = new VueRouter({
     { path: '/contatti', name: 'contatti', component: Contatti},
     { path: '/dettaglio', name: 'dettaglio', component: Dettaglio},
     { path: '/servizi', name: 'servizi', component: Servizi},
-    { path: '/trattamenti', name: 'trattamenti', component: Trattamenti},
+    { path: '/trattamenti/massaggi', name: 'trattamenti/massaggi', component: massaggi},
+    { path: '/trattamenti/altro', name: 'trattamenti/altro', component: altro},
   ]
 })
 
@@ -52,11 +57,5 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-    db.collection("Recensioni")
-    .get()
-    .then(function(res) {
-        res.forEach(function(doc) {
-            console.log(doc.id, " => ", doc.data());
-        });
-    });
+export default db;
 

@@ -1,18 +1,24 @@
 <template>
   <div class="page-container">
-    <h1> Scopri tutti i nostri servizi! </h1>
+     <md-tabs class="md-primary" md-alignment="fixed" md-active-tab="tab-massaggi" >
+            <md-tab id="tab-massaggi" md-label="Massaggi" to="/trattamenti/massaggi"> </md-tab>
+            <md-tab id="tab-altro" md-label="Altro" to="/trattamenti/altro"> </md-tab>
+          </md-tabs>
+
+    <h1> Massaggi </h1>
+
     <div class="md-layout" >
       <div class="md-layout-item md-large-size-20 md-xlarge-size-20 md-medium-size-33 md-xsmall-size-100" 
-      v-for="s in Servizi" :key="s.id">
+      v-for="m in Massaggi" :key="m.id">
         <div >
       <md-card id="cards">
         <md-card-media class="immagini">
-          <img id="immagini" :src="s.immagine" alt="People" >
+          <img id="immagini" :src="m.immagine" alt="People" >
         </md-card-media>
 
-        <md-card-header>
-          <div class="md-title">{{s.nome}} </div>
-          <div class="md-subhead"> {{s.costo}}</div>
+        <md-card-header> 
+          <div class="md-title">{{m.nome}} </div>
+          <div class="md-subhead"> {{m.costo}}</div>
         </md-card-header>
 
           <md-card-actions md-alignment="right">
@@ -33,12 +39,12 @@ import db from '../main'
 export default  {
     data: function () {
       return{
-         Servizi: []
+         Massaggi: []
       }
     },
 
   created () {
-  db.collection ('Servizi')
+  db.collection ('Massaggi')
     .get()
     .then(querySnapshot => {
       querySnapshot.forEach (doc => {
@@ -47,7 +53,7 @@ export default  {
           'nome': doc.data().nome,
           'costo': doc.data().costo,
         }
-        this.Servizi.push(data)
+        this.Massaggi.push(data)
       })
     }) 
 
@@ -57,7 +63,6 @@ export default  {
 
 
 <style scoped>
-
 h1 {
   text-align: center;
   margin-top: 50px;
@@ -65,7 +70,6 @@ h1 {
 
 #cards{
   margin-top:40px;
-
 }
  .md-card-header {
   height:100px;
@@ -75,4 +79,13 @@ h1 {
   height: 200px;
   overflow: hidden;
 }
+
+.md-title {
+  overflow: hidden;
+  text-overflow:ellipsis;  
+}
+
+
+
+
 </style>
