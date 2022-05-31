@@ -53,7 +53,8 @@
           Via Calepina, 14 - I-38122 Trento
         </p>
         <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2768.2115161408547!2d11.120967615577749!3d46.06682347911273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4782714b3110dfaf%3A0xc206cbc5ae206dc6!2sVia%20Calepina%2C%2014%2C%2038122%20Trento%20TN!5e0!3m2!1sit!2sit!4v1653312492997!5m2!1sit!2sit" 
+          id="mappa"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2768.2115161408547!2d11.120967615577749!3d46.06682347911273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4782714b3110dfaf%3A0xc206cbc5ae206dc6!2sVia%20Calepina%2C%2014%2C%2038122%20Trento%20TN!5e0!3m2!1sit!2sit!4v1653312492997!5m2!1sit!2sit" 
           allowfullscreen="" 
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -61,9 +62,10 @@
     </div>
   </div>
 
+<md-divider></md-divider>
+
 <!--Sezione recensioni-->
-      
-    <h3>Il tuo parere per noi è importante!</h3>
+    <h3>Abbiamo molto a cuore l’opinione dei nostri clienti, se ti fa piacere lasciaci una recensione!</h3>
     <div class="recensioni md-layout md-gutter">
         <div class="md-layout-item  md-xlarge-size-25 md-large-size-25 md-medium-size-25 md-xsmall-size-100">
           <md-field>
@@ -230,22 +232,20 @@ export default  {
 
   #chiSiamo{
     text-align: center;
-    padding: 10px;
+    padding: 20px 20px 50px;
   }
 
   .md-layout {
     margin:10px;
   }
 
-  iframe  {
-    width:600;
-    height:450;
+  #mappa  {
     border:0; 
   }
 
   h3{
     text-align: left;
-    margin: 10px 50px;
+    margin: 30px 50px 5px;
   }
   .recensioni {
      margin: 0px;

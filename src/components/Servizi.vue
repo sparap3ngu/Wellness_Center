@@ -75,8 +75,4 @@ h1 {
   height: 200px;
   overflow: hidden;
 }
-
-#immagini {
-  /*height:100%;*/
-}
 </style>
