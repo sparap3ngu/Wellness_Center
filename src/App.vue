@@ -68,8 +68,7 @@
    
     <md-app-content>
         <router-view />
-            
-        <footer>
+        <footer >
           <div class="footer">
             <p>
               WELNESSCENTER - 
@@ -86,10 +85,10 @@
               - Lorenzo Porta <a href=""><img src="./components/icons/insta-logo.png" alt="logo instagram"></a>
               - Milena Paniz <a href="https://www.instagram.com/milenapaniz/"><img src="./components/icons/insta-logo.png" alt="logo instagram"></a>
             </p>
-
           </div>
         </footer>
     </md-app-content>
+
 
 
   </md-app>
@@ -111,12 +110,8 @@ export default  {
 </script>
 
 <style>
- .md-app {
-    position: relative;
-  }
-
   .md-app-container{
-    min-height:100vh;
+    height: 100vh;
   }
 
   .md-app-content{
@@ -144,7 +139,9 @@ export default  {
       display: none;
     }
   }
-
+  .md-app-content {
+    position: relative;
+  }
   .footer {
     background: #cccccc;
     width: 100%;
