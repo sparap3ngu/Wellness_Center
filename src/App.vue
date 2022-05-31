@@ -112,8 +112,13 @@ export default  {
 
 <style>
  .md-app {
-    height: 100vh;
+    position: relative;
   }
+
+  .md-app-container{
+    min-height:100vh;
+  }
+
   .md-app-content{
     padding:0;
     border:0;
@@ -142,8 +147,12 @@ export default  {
 
   .footer {
     background: #cccccc;
+    width: 100%;
     text-align: center;
     padding: 10px;
+    margin-top: 20px;
+    position: absolute;
+    bottom:-173px;
   }
 
   .footer h6 {

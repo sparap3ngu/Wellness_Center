@@ -1,8 +1,6 @@
 <template>
   <div class="page-container">
-
     <h1> Scopri tutti i nostri servizi! </h1>
-
     <div class="md-layout" >
       <div class="md-layout-item md-large-size-20 md-xlarge-size-20 md-medium-size-33 md-xsmall-size-100" 
       v-for="s in Servizi" :key="s.id">
@@ -81,8 +79,4 @@ h1 {
 #immagini {
   /*height:100%;*/
 }
-
-
-
-
 </style>
