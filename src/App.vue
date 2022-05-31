@@ -149,7 +149,7 @@ export default  {
     padding: 10px;
     margin-top: 20px;
     position: absolute;
-    bottom:-173px;
+    bottom:-250px;
   }
 
   .footer h6 {
