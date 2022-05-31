@@ -113,6 +113,7 @@ import img1 from './icons/img1.png'
 import img2 from './icons/img2.png'
 import img3 from './icons/img3.png'
 
+
 import db from '../main.js'
 
 export default  {
@@ -224,12 +225,6 @@ export default  {
     background-color: #cccccc;
   }
 
-  .newsletter h3, p  {
-    padding-top: 15px;
-    margin: 0px;
-    text-align: center;
-  }
-
   #chiSiamo{
     text-align: center;
     padding: 20px 20px 50px;
@@ -267,6 +262,7 @@ export default  {
 
   .unaRec p {
     padding:10px 0px;
+
   }
 
   .nomeUtente {

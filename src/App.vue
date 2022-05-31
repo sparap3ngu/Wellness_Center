@@ -82,7 +82,7 @@
             <h6> Created by</h6>
             <p>
               Giulia Mussetti <a href="https://www.instagram.com/_free.soul__/"><img src="./components/icons/insta-logo.png" alt="logo instagram"></a>
-              - Lorenzo Porta <a href=""><img src="./components/icons/insta-logo.png" alt="logo instagram"></a>
+              - Lorenzo Porta <a href="https://www.instagram.com/lollo_porta/"><img src="./components/icons/insta-logo.png" alt="logo instagram"></a>
               - Milena Paniz <a href="https://www.instagram.com/milenapaniz/"><img src="./components/icons/insta-logo.png" alt="logo instagram"></a>
             </p>
           </div>
