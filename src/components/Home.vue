@@ -157,8 +157,9 @@ export default  {
         const data =  {
           'utente': doc.data().utente,
           'descrizione': doc.data().descrizione,
+          'createdAt': doc.data().createdAt,
         }
-        this.Recensioni.push(data)
+        this.Recensioni.push(data)      
       })
     }) 
     },
@@ -169,9 +170,10 @@ export default  {
     .set({
       utente: this.dati.utente,
       descrizione: this.dati.descrizione,
+      createdAt: new Date (),
     })
     .then(() => {
-      alert ("La tua recensione è stata salvata correttamente. Aggiorna la pagina per visualizzarla correttamente");
+      alert ("La tua recensione è stata salvata correttamente");
       this.readData();
       this.reset();
     })
@@ -182,9 +184,8 @@ export default  {
     },
 
     reset (){
-      Object.assign(this.data, this.$options.data.apply(this));
-    }
-
+      Object.assign(this.$data, this.$options.data.apply(this));
+    },
   },
 
   components:{
