@@ -2,31 +2,42 @@
   <div id="App">
     <md-app md-mode="fixed" md-waterfall >
       <md-app-toolbar class="md-primary">
-        <md-button id="menu" class="md-icon-button" @click="menuVisible = !menuVisible">
-          <md-icon>menu</md-icon>
-        </md-button>
-        <router-link to="/home">
-          <h3 class="md-title">
-          <img src="/logo2.png" id="logo" title="logo" alt="logo">
-            Wellness Center
-          </h3>
-        </router-link>
-                  
-                  
-  <!-- <div>
-        <md-tabs class="md-primary" md-alignment="right">
-          <md-tab id="tab-trattamenti" md-label="Trattamenti"></md-tab>
-          <md-tab id="tab-servizi" md-label="Servizi"></md-tab>
-          <md-tab id="tab-contatti" md-label="Contatti"></md-tab>
-        </md-tabs>
-      </div> --> 
 
-        <div id="toolbar" class="md-toolbar-section-end">
-            <md-button class="toolbarButton" to="/home">Home</md-button>
-            <md-button class="toolbarButton" to="/trattamenti" >Trattamenti</md-button>
-            <md-button class="toolbarButton" to="/servizi">Servizi</md-button>
-            <md-button class="toolbarButton" to="contatti">Contatti</md-button>
+        <div class="md-toolbar-row">
+          <md-button id="menu" class="md-icon-button" @click="menuVisible = !menuVisible">
+            <md-icon>menu</md-icon>
+          </md-button>
+          <router-link to="/home">
+            <h3 class="md-title">
+            <img src="/logo2.png" id="logo" title="logo" alt="logo">
+              Wellness Center
+            </h3>
+          </router-link>
+                    
+                    
+        <!--div>
+          <md-tabs class="md-primary" md-alignment="right">
+            <md-tab id="tab-trattamenti" md-label="Trattamenti" to="/trattamenti"></md-tab>
+            <md-tab id="tab-servizi" md-label="Servizi" to="/servizi"></md-tab>
+            <md-tab id="tab-contatti" md-label="Contatti" to="/contatti"></md-tab>
+          </md-tabs>
+        </div--> 
+
+          <div id="toolbar" class="md-toolbar-section-end">
+              <md-button class="toolbarButton" to="/home">Home</md-button>
+              <md-button class="toolbarButton" to="/trattamenti/massaggi" >Trattamenti</md-button>
+              <md-button class="toolbarButton" to="/servizi">Servizi</md-button>
+              <md-button class="toolbarButton" to="contatti">Contatti</md-button>
+          </div>
         </div>
+ 
+       <!--div class="md-toolbar-row">
+          <md-tabs class="md-primary md-toolbar-section-end" md-alignment="fixed" >
+            <md-tab id="tab-massaggi" md-label="Massaggi" to="/trattamenti/massaggi" exact> </md-tab>
+            <md-tab id="tab-altro" md-label="Altro" to="/trattamenti/altro"> </md-tab>
+          </md-tabs>
+       </!--div-->
+       
     </md-app-toolbar>
 
     <md-app-drawer :md-active.sync="menuVisible">
@@ -43,7 +54,7 @@
           <md-list-item to="/home">
             <span class="md-list-item-text">Home</span>
           </md-list-item>
-          <md-list-item to="/trattamenti">
+          <md-list-item to="/trattamenti/massaggi">
             <span class="md-list-item-text">Trattamenti</span>
           </md-list-item>
           <md-list-item to="/servizi">
@@ -87,6 +98,8 @@
 </template>
 
 <script>
+//import router from './main.js'
+
 export default  {
   name: "App",
   data: function(){

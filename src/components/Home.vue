@@ -20,7 +20,7 @@
       </p>
       <md-field>
         <md-input placeholder="Inserisci la tua email"></md-input>
-        <md-button class=""> Invia </md-button>
+        <md-button> Invia </md-button>
       </md-field>
     </div>
 
@@ -72,16 +72,53 @@
 
     </div>
     </div>
+
+<!--Sezione recensioni-->
+      <div class="md-layout md-gutter ">
+
+      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
+         <md-field class="scriviRec">
+            <label>Lascia una recensione</label>
+            <md-textarea v-model="textarea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse recusandae praesentium molestiae ex amet magni accusantium, deleniti quo non qui, eius, necessitatibus impedit dolore blanditiis ab dolorem. Exercitationem, blanditiis nam.</md-textarea>
+          </md-field>
+          <md-button> Invia </md-button>
+      </div>
+      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
+        <div class="leggiRec">
+          
+          <!--PROBLEMA DI VISUALIZZAZIONE-->
+        <!-- <div class="unaRec"  
+          v-for="r in Recensioni" 
+          :key="r.id"> 
+              <h5 class="nomeUtente">Nome utente:</h5>
+              <p class="nomeUtente"> {{r.utente}} </p>
+              <hr>
+              <p> {{r.descrizione}}</p>
+            </div> 
+-->
+          <div class="unaRec" 
+          > 
+              <h5 class="nomeUtente">Nome utente:</h5>
+              <p class="nomeUtente">  </p>
+              <hr>
+              <p> </p>
+          </div>   
+                    </div>   
+
+      </div>
+      </div>
   </div>
 </template>
 
 <script>
 import carousel from './carousel.vue'
 import carouselItem from './carouselItem.vue'
+
 import img1 from './icons/img1.png'
 import img2 from './icons/img2.png'
 import img3 from './icons/img3.png'
 
+import db from '../main.js'
 
 export default  {
   data: function () {
@@ -98,7 +135,24 @@ export default  {
       ],
       visibleItem: 0,
       direction: 'left',
+      Recensioni: [],
     }
+  },
+
+  created () {
+    db.collection ('Recensioni')
+    .get()
+    .then(function(res) {
+        res.forEach(function(doc) {
+            const data = {
+              'id': doc.id,
+              'utente':doc.data().utente,
+              'descrizione': doc.data().descrizione,
+            }
+            this.Recensioni.push(data)
+
+        });
+    });
   },
 
   methods:  {
@@ -160,5 +214,33 @@ export default  {
     width:600;
     height:450;
     border:0; 
+  }
+
+  .scriviRec {
+    margin-top:10px;
+  }  
+  .leggiRec {
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: rgba(0,0,0,0.42);
+    overflow: scroll;
+    height: 116px;
+    margin-top:10px;
+    text-align: left;
+  }
+
+  .unaRec {
+    background-color: #cccccc;
+    height: auto;
+    border-radius: 3px;
+    margin: 7px;
+  }
+
+  .unaRec h5 {
+    margin:0 10px;
+  }
+
+  .nomeUtente {
+    display:inline;
   }
 </style>

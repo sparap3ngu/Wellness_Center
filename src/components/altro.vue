@@ -1,20 +1,24 @@
 <template>
   <div class="page-container">
+     <md-tabs class="md-primary" md-alignment="fixed" md-active-tab="tab-altro">
+            <md-tab id="tab-massaggi" md-label="Massaggi" to="/trattamenti/massaggi"> </md-tab>
+            <md-tab id="tab-altro" md-label="Altro" to="/trattamenti/altro" exact> </md-tab>
+          </md-tabs>
 
-    <h1> Scopri tutti i nostri servizi! </h1>
+      <h1> Altri trattamenti </h1>
 
     <div class="md-layout" >
       <div class="md-layout-item md-large-size-20 md-xlarge-size-20 md-medium-size-33 md-xsmall-size-100" 
-      v-for="s in Servizi" :key="s.id">
+      v-for="t in Trattamenti" :key="t.id">
         <div >
       <md-card id="cards">
         <md-card-media class="immagini">
-          <img id="immagini" :src="s.immagine" alt="People" >
+          <img id="immagini" :src="t.immagine" alt="People" >
         </md-card-media>
 
         <md-card-header>
-          <div class="md-title">{{s.nome}} </div>
-          <div class="md-subhead"> {{s.costo}}</div>
+          <div class="md-title">{{t.nome}} </div>
+          <div class="md-subhead"> {{t.costo}}</div>
         </md-card-header>
 
           <md-card-actions md-alignment="right">
@@ -35,12 +39,12 @@ import db from '../main'
 export default  {
     data: function () {
       return{
-         Servizi: []
+         Trattamenti: []
       }
     },
 
   created () {
-  db.collection ('Servizi')
+  db.collection ('Trattamenti')
     .get()
     .then(querySnapshot => {
       querySnapshot.forEach (doc => {
@@ -49,7 +53,7 @@ export default  {
           'nome': doc.data().nome,
           'costo': doc.data().costo,
         }
-        this.Servizi.push(data)
+        this.Trattamenti.push(data)
       })
     }) 
 
@@ -59,12 +63,11 @@ export default  {
 
 
 <style scoped>
+h1{
+    text-align: center;
+    margin-top: 50px;
 
-h1 {
-  text-align: center;
-  margin-top: 50px;
 }
-
 #cards{
   margin-top:40px;
 
