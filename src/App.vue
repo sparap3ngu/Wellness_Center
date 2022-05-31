@@ -71,9 +71,9 @@
             <hr>
             <h6> Created by</h6>
             <p>
-              Giulia Mussetti <a href="https://www.instagram.com/_free.soul__/"><img src="https://cdn.icon-icons.com/icons2/2715/PNG/512/instagram_logo_icon_172387.png" alt="logo instagram"></a>
-              - Lorenzo Porta <a href=""><img src="https://cdn.icon-icons.com/icons2/2715/PNG/512/instagram_logo_icon_172387.png" alt="logo instagram"></a>
-              - Milena Paniz <a href="https://www.instagram.com/milenapaniz/"><img src="https://cdn.icon-icons.com/icons2/2715/PNG/512/instagram_logo_icon_172387.png" alt="logo instagram"></a>
+              Giulia Mussetti <a href="https://www.instagram.com/_free.soul__/"><img src="./components/icons/insta-logo.png" alt="logo instagram"></a>
+              - Lorenzo Porta <a href=""><img src="./components/icons/insta-logo.png" alt="logo instagram"></a>
+              - Milena Paniz <a href="https://www.instagram.com/milenapaniz/"><img src="./components/icons/insta-logo.png" alt="logo instagram"></a>
             </p>
 
           </div>
@@ -139,7 +139,7 @@ export default  {
   }
 
   a img {
-    width:20px;
+    width:15px;
   }
 </style>
 
