@@ -30,15 +30,19 @@
       <div class="md-layout-item md-large-size-33 md-medium-size-100 md-xsmall-size-100">
         <h1> Chi siamo </h1>
         <p>
-          WellnessCenter è il luogo ideale per chi vuole ritrovare, coltivare e nutrire il proprio benessere psicofisico. 
-          È un ambiente accogliente, rilassante e silenzioso dove potrai gustare anche delle ottime tisane e leggere un buon libro. 
-          WellnessCenter è uno studio olistico unico e professionale: qui imparerai a conoscere te stesso per ritrovare calma e serenità.
+          Wellness Center è un prestigioso Centro Benessere che sorge nel cuore della città di Trento.
+          Da noi troverete un luogo ideale dove poter beneficiare di esclusivi rituali benessere personalizzati per restituire alla mente e al corpo ciò di cui ha realmente bisogno. 
+          L’ambiente silenzioso ed accogliente favorirà il vostro relax, potrete approfittare delle pause durante i trattamenti per leggere un buon libro mentre sorseggiate una delle tisane naturali offerte dall’azienda Trentino Erbe con la quale collaboriamo da anni.
+          Wellness Center è un centro olistico unico nella zona e nasce dal desiderio di proporre un metodo operativo altamente qualificato ed innovativo attraverso l’expertise del nostro team di professionisti altamente formati che puntano a valorizzare l’unicità di ogni singola persona.
         </p>
       </div>
       <div class="md-layout-item md-large-size-33  md-medium-size-50 md-xsmall-size-100">
         <h1> Cosa facciamo </h1>
         <p>
-          L’educazione al benessere favorisce il mantenimento ottimale dell’omeostasi energetico-funzionale e il ripristino armonico dell’essere umano.
+          L’educazione al benessere è il punto focale della nostra attività.
+          Attraverso i nostri trattamenti ci proponiamo di favorire il mantenimento ottimale dell’omeostasi energetico-funzionale ed il ripristino armonico delle funzioni corporee e spirituali di ogni individuo.
+          Accogliamo clienti di ogni età e condizione, infatti, in caso di situazioni particolari è possibile chiedere preventivamente una consulenza personalizzata direttamente al nostro team sanitario in modo tale che l’esperienza di soggiorno nel nostro centro possa incontrare al meglio ogni tipo di aspettativa.
+          Allestito nella stanza adiacente la reception troverete inoltre un piccolo shop dove poter acquistare sia i prodotti utilizzati nel nostro centro che gli articoli proposti da Trentino Erbe.
         </p>
       </div>
       <div class="md-layout-item md-large-size-33  md-medium-size-50 md-xsmall-size-100">
