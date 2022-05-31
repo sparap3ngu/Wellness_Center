@@ -57,8 +57,5 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
-<<<<<<< HEAD
 export default db;
-=======
-export default db;
->>>>>>> trattamenti
+
