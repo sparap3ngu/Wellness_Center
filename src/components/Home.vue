@@ -262,6 +262,7 @@ export default  {
 
   .unaRec p {
     padding:10px 0px;
+    text-align: center;
 
   }
 
