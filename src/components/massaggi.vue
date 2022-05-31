@@ -16,7 +16,7 @@
           <img id="immagini" :src="m.immagine" alt="People" >
         </md-card-media>
 
-        <md-card-header>
+        <md-card-header> 
           <div class="md-title">{{m.nome}} </div>
           <div class="md-subhead"> {{m.costo}}</div>
         </md-card-header>
@@ -66,12 +66,10 @@ export default  {
 h1 {
   text-align: center;
   margin-top: 50px;
-
 }
 
 #cards{
   margin-top:40px;
-
 }
  .md-card-header {
   height:100px;
@@ -82,8 +80,9 @@ h1 {
   overflow: hidden;
 }
 
-#immagini {
-  /*height:100%;*/
+.md-title {
+  overflow: hidden;
+  text-overflow:ellipsis;  
 }
 
 

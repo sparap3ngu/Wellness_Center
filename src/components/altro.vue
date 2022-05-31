@@ -81,8 +81,9 @@ h1{
   overflow: hidden;
 }
 
-#immagini {
-  /*height:100%;*/
+.md-title {
+  overflow: hidden;
+  text-overflow:ellipsis;  
 }
 
 

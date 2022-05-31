@@ -126,6 +126,11 @@ h1 {
   padding: 20px;
 }
 
+.md-title {
+  overflow: hidden;
+  text-overflow:ellipsis;  
+}
+
 
 </style>
 
