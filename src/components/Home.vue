@@ -58,29 +58,41 @@
     </div>
 
 <!--Sezione recensioni-->
-      <div class="md-layout md-gutter ">
+      <div class="recensioni md-layout md-gutter">
+          <div class="md-layout-item  md-xlarge-size-25 md-large-size-25 md-medium-size-25 md-xsmall-size-100">
+            <md-field>
+              <label> Utente </label>
+              <md-input
+              class="utente"
+              type="text"
+              v-model="dati.utente"></md-input>
+            </md-field>
+          </div>
+          <div class="md-layout-item  md-xlarge-size-75 md-large-size-75 md-medium-size-75 md-xsmall-size-100"> 
+            <md-field>
+              <label>Lascia una recensione</label>
+              <md-input 
+              type="text"
+              v-model="dati.descrizione"></md-input>  
+            <div>
+              <md-button @click="saveData"> Invia </md-button>
+            </div>         
+            </md-field>
+          </div>
+      </div>
 
-      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
-         <md-field class="scriviRec">
-            <label>Lascia una recensione</label>
-            <md-textarea v-model="textarea"></md-textarea>
-          </md-field>
-          <md-button @click="addRecensione(rec)"> Invia </md-button>
-      </div>
-      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
-        <div class="leggiRec">
-          
-          <div class="unaRec"  
-          v-for="r in Recensioni" 
-          :key="r.id"> 
-              <h5 class="nomeUtente">Nome utente:</h5>
-              <p class="nomeUtente"> {{r.utente}} </p>
-              <hr>
-              <p> {{r.descrizione}}</p>  
-            </div>
-          </div>  
-        </div> 
-      </div>
+    <div>
+      <div class="leggiRec">          
+        <div class="unaRec"  
+        v-for="r in Recensioni" 
+        :key="r.id"> 
+            <h5 class="nomeUtente">Nome utente:</h5>
+            <p class="nomeUtente"> {{r.utente}} </p>
+            <hr>
+            <p> {{r.descrizione}}</p>  
+          </div>
+        </div>  
+      </div> 
   </div>
 </template>
 
@@ -91,6 +103,7 @@ import db from '../main.js'
 
 
 export default  {
+  name: "home",
   data: function () {
     return{
       carItems:[
@@ -101,27 +114,15 @@ export default  {
       visibleItem: 0,
       direction: 'left',
       Recensioni: [],
-      rec:[
-        {
-          utente: 'Giulia',
-          descrizione: 'Belizimo!'
-        }
-      ],
+      dati:  {
+        utente: null,
+        descrizione: null,
+      }
     }
   },
 
   created () {
-  db.collection ('Recensioni')
-    .get()
-    .then(querySnapshot => {
-      querySnapshot.forEach (doc =>  {
-        const data =  {
-          'utente': doc.data().utente,
-          'descrizione': doc.data().descrizione,
-        }
-        this.Recensioni.push(data)
-      })
-    }) 
+    this.readData();
 
   },
 
@@ -143,13 +144,37 @@ export default  {
       }
       this.direction = 'right'
     },
-    addRecensione (rec){
-      db.collection("Recensioni")
-        .add({
-            //utente: rec.utente,
-            descrizione: rec.descrizione,
-            });
+    readData(){
+      db.collection ('Recensioni')
+    .get()
+    .then(querySnapshot => {
+      querySnapshot.forEach (doc =>  {
+        const data =  {
+          'utente': doc.data().utente,
+          'descrizione': doc.data().descrizione,
+        }
+        this.Recensioni.push(data)
+      })
+    }) 
+    },
+
+    saveData(){
+    db.collection("Recensioni")
+    .doc()
+    .set({
+      utente: this.dati.utente,
+      descrizione: this.dati.descrizione,
+    })
+    .then(() => {
+      alert ("La tua recensione è stata salvata correttamente");
+      this.readData();
+      
+    })
+    .catch ((err) => {
+      alert ("Ops! Non ha funzionato, riprova");
+    })
     }
+
   },
 
   components:{
@@ -192,17 +217,11 @@ export default  {
     border:0; 
   }
 
-  .scriviRec {
-    margin-top:10px;
-  }  
-  .leggiRec {
-    border: 1px solid;
-    border-radius: 3px;
-    border-color: rgba(0,0,0,0.42);
-    overflow: scroll;
-    height: 116px;
-    margin-top:10px;
-    text-align: left;
+  .recensioni {
+    padding: 15px;
+  }
+  .utente{
+    margin:8px 0px;
   }
 
   .unaRec {
