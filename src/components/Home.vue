@@ -223,6 +223,14 @@ export default  {
     padding-right: 20px;
     padding-bottom: 1px;
     background-color: #cccccc;
+    text-align: center;
+  }
+
+  .newsletter h3  {
+    text-align: center;
+    padding-top: 20px;
+    margin: 0;
+
   }
 
   #chiSiamo{
