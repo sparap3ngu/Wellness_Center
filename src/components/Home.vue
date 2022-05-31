@@ -58,29 +58,32 @@
     </div>
 
 <!--Sezione recensioni-->
-      <div class="recensioni md-layout md-gutter">
-          <div class="md-layout-item  md-xlarge-size-25 md-large-size-25 md-medium-size-25 md-xsmall-size-100">
-            <md-field>
-              <label> Utente </label>
-              <md-input
-              class="utente"
-              type="text"
-              v-model="dati.utente"></md-input>
-            </md-field>
-          </div>
-          <div class="md-layout-item  md-xlarge-size-75 md-large-size-75 md-medium-size-75 md-xsmall-size-100"> 
-            <md-field>
-              <label>Lascia una recensione</label>
-              <md-input 
-              type="text"
-              v-model="dati.descrizione"></md-input>  
-            <div>
-              <md-button @click="saveData"> Invia </md-button>
-            </div>         
-            </md-field>
-          </div>
-      </div>
+      
+    <h3>Il tuo parere per noi è importante!</h3>
+    <div class="recensioni md-layout md-gutter">
+        <div class="md-layout-item  md-xlarge-size-25 md-large-size-25 md-medium-size-25 md-xsmall-size-100">
+          <md-field>
+            <label> Utente </label>
+            <md-input
+            class="utente"
+            type="text"
+            v-model="dati.utente"></md-input>
+          </md-field>
+        </div>
+        <div class="md-layout-item  md-xlarge-size-75 md-large-size-75 md-medium-size-75 md-xsmall-size-100"> 
+          <md-field>
+            <label>Lascia una recensione</label>
+            <md-input 
+            type="text"
+            v-model="dati.descrizione"></md-input>  
+          <div>
+            <md-button @click="saveData"> Invia </md-button>
+          </div>         
+          </md-field>
+        </div>
+    </div>
 
+    <h3>Dicono di noi</h3>
     <div>
       <div class="leggiRec">          
         <div class="unaRec"  
@@ -136,6 +139,7 @@ export default  {
       };
       this.direction = 'left'
     },
+
     prev (){
       if (this.visibleItem == 0) {
         this.visibleItem = this.carItems.length - 1
@@ -144,6 +148,7 @@ export default  {
       }
       this.direction = 'right'
     },
+
     readData(){
       db.collection ('Recensioni')
     .get()
@@ -166,13 +171,18 @@ export default  {
       descrizione: this.dati.descrizione,
     })
     .then(() => {
-      alert ("La tua recensione è stata salvata correttamente");
+      alert ("La tua recensione è stata salvata correttamente. Aggiorna la pagina per visualizzarla correttamente");
       this.readData();
-      
+      this.reset();
     })
     .catch ((err) => {
+      consol.log(err);
       alert ("Ops! Non ha funzionato, riprova");
     })
+    },
+
+    reset (){
+      Object.assign(this.data, this.$options.data.apply(this));
     }
 
   },
@@ -217,8 +227,12 @@ export default  {
     border:0; 
   }
 
+  h3{
+    text-align: left;
+    margin: 10px 50px;
+  }
   .recensioni {
-    padding: 15px;
+     margin: 0px;
   }
   .utente{
     margin:8px 0px;
@@ -233,6 +247,10 @@ export default  {
 
   .unaRec h5 {
     margin:0 10px;
+  }
+
+  .unaRec p {
+    padding:10px 0px;
   }
 
   .nomeUtente {
