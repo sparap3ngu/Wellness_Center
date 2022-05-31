@@ -25,8 +25,8 @@
     </div>
 
 <!--Corpo testuale della home-->
-    <div>
-      <div id="chiSiamo" class="md-layout md-gutter">
+  <div>
+    <div id="chiSiamo" class="md-layout md-gutter">
       <div class="md-layout-item md-large-size-33 md-medium-size-100 md-xsmall-size-100">
         <h1> Chi siamo </h1>
         <p>
@@ -54,24 +54,8 @@
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-
-<!--Sezione recensioni-->
-      <div class="md-layout md-gutter ">
-
-      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
-         <md-field class="scriviRec">
-            <label>Lascia una recensione</label>
-            <md-textarea v-model="textarea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse recusandae praesentium molestiae ex amet magni accusantium, deleniti quo non qui, eius, necessitatibus impedit dolore blanditiis ab dolorem. Exercitationem, blanditiis nam.</md-textarea>
-          </md-field>
-      </div>
-      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
-        <div class="leggiRec">
-        </div>   
-      </div>
-      </div>
-
     </div>
-    </div>
+  </div>
 
 <!--Sezione recensioni-->
       
