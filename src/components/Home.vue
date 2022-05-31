@@ -74,39 +74,44 @@
     </div>
 
 <!--Sezione recensioni-->
-      <div class="md-layout md-gutter ">
-
-      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
-         <md-field class="scriviRec">
-            <label>Lascia una recensione</label>
-            <md-textarea v-model="textarea">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse recusandae praesentium molestiae ex amet magni accusantium, deleniti quo non qui, eius, necessitatibus impedit dolore blanditiis ab dolorem. Exercitationem, blanditiis nam.</md-textarea>
+      
+    <h3>Il tuo parere per noi è importante!</h3>
+    <div class="recensioni md-layout md-gutter">
+        <div class="md-layout-item  md-xlarge-size-25 md-large-size-25 md-medium-size-25 md-xsmall-size-100">
+          <md-field>
+            <label> Utente </label>
+            <md-input
+            class="utente"
+            type="text"
+            v-model="dati.utente"></md-input>
           </md-field>
-          <md-button> Invia </md-button>
-      </div>
-      <div class="md-layout-item  md-medium-size-50 md-xsmall-size-100">
-        <div class="leggiRec">
-          
-          <!--PROBLEMA DI VISUALIZZAZIONE-->
-        <!-- <div class="unaRec"  
-          v-for="r in Recensioni" 
-          :key="r.id"> 
-              <h5 class="nomeUtente">Nome utente:</h5>
-              <p class="nomeUtente"> {{r.utente}} </p>
-              <hr>
-              <p> {{r.descrizione}}</p>
-            </div> 
--->
-          <div class="unaRec" 
-          > 
-              <h5 class="nomeUtente">Nome utente:</h5>
-              <p class="nomeUtente">  </p>
-              <hr>
-              <p> </p>
-          </div>   
-                    </div>   
+        </div>
+        <div class="md-layout-item  md-xlarge-size-75 md-large-size-75 md-medium-size-75 md-xsmall-size-100"> 
+          <md-field>
+            <label>Lascia una recensione</label>
+            <md-input 
+            type="text"
+            v-model="dati.descrizione"></md-input>  
+          <div>
+            <md-button @click="saveData"> Invia </md-button>
+          </div>         
+          </md-field>
+        </div>
+    </div>
 
-      </div>
-      </div>
+    <h3>Dicono di noi</h3>
+    <div>
+      <div class="leggiRec">          
+        <div class="unaRec"  
+        v-for="r in Recensioni" 
+        :key="r.id"> 
+            <h5 class="nomeUtente">Nome utente:</h5>
+            <p class="nomeUtente"> {{r.utente}} </p>
+            <hr>
+            <p> {{r.descrizione}}</p>  
+          </div>
+        </div>  
+      </div> 
   </div>
 </template>
 
@@ -121,6 +126,7 @@ import img3 from './icons/img3.png'
 import db from '../main.js'
 
 export default  {
+  name: "home",
   data: function () {
     return{
       carItems:[
@@ -136,24 +142,18 @@ export default  {
       visibleItem: 0,
       direction: 'left',
       Recensioni: [],
+      dati:  {
+        utente: null,
+        descrizione: null,
+      }
     }
   },
 
   created () {
-    db.collection ('Recensioni')
-    .get()
-    .then(function(res) {
-        res.forEach(function(doc) {
-            const data = {
-              'id': doc.id,
-              'utente':doc.data().utente,
-              'descrizione': doc.data().descrizione,
-            }
-            this.Recensioni.push(data)
+    this.readData();
 
-        });
-    });
   },
+
 
   methods:  {
     next(){
@@ -164,6 +164,7 @@ export default  {
       };
       this.direction = 'left'
     },
+
     prev (){
       if (this.visibleItem == 0) {
         this.visibleItem = this.carItems.length - 1
@@ -171,6 +172,44 @@ export default  {
         this.visibleItem --;
       }
       this.direction = 'right'
+    },
+
+    readData(){
+      db.collection ('Recensioni')
+    .get()
+    .then(querySnapshot => {
+      querySnapshot.forEach (doc =>  {
+        const data =  {
+          'utente': doc.data().utente,
+          'descrizione': doc.data().descrizione,
+          'createdAt': doc.data().createdAt,
+        }
+        this.Recensioni.push(data)      
+      })
+    }) 
+    },
+
+    saveData(){
+    db.collection("Recensioni")
+    .doc()
+    .set({
+      utente: this.dati.utente,
+      descrizione: this.dati.descrizione,
+      createdAt: new Date (),
+    })
+    .then(() => {
+      alert ("La tua recensione è stata salvata correttamente");
+      this.readData();
+      this.reset();
+    })
+    .catch ((err) => {
+      consol.log(err);
+      alert ("Ops! Non ha funzionato, riprova");
+    })
+    },
+
+    reset (){
+      Object.assign(this.$data, this.$options.data.apply(this));
     },
   },
 
@@ -216,17 +255,15 @@ export default  {
     border:0; 
   }
 
-  .scriviRec {
-    margin-top:10px;
-  }  
-  .leggiRec {
-    border: 1px solid;
-    border-radius: 3px;
-    border-color: rgba(0,0,0,0.42);
-    overflow: scroll;
-    height: 116px;
-    margin-top:10px;
+  h3{
     text-align: left;
+    margin: 10px 50px;
+  }
+  .recensioni {
+     margin: 0px;
+  }
+  .utente{
+    margin:8px 0px;
   }
 
   .unaRec {
@@ -238,6 +275,10 @@ export default  {
 
   .unaRec h5 {
     margin:0 10px;
+  }
+
+  .unaRec p {
+    padding:10px 0px;
   }
 
   .nomeUtente {
