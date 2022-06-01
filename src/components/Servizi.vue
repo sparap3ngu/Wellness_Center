@@ -16,7 +16,7 @@
         </md-card-header>
 
           <md-card-actions md-alignment="right">
-              <md-button to="/dettaglio">Dettagli</md-button>
+              <md-button :to="'/dettaglio/' + s.id">Dettagli</md-button>
           </md-card-actions>
       </md-card>
         </div>
@@ -43,6 +43,7 @@ export default  {
     .then(querySnapshot => {
       querySnapshot.forEach (doc => {
         const data =  {
+          'id': doc.id,
           'immagine': doc.data().immagine,
           'nome': doc.data().nome,
           'costo': doc.data().costo,
