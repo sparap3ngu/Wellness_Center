@@ -37,20 +37,30 @@ export default  {
       }
     },
 
+  firestore: function(){
+    return{
+      Servizi: db.collection('Servizi'),
+    }
+  },
+
+  methods: function ()  {
+    
+  },
+
   created: function () {
-  db.collection ('Servizi')
-    .get()
-    .then(querySnapshot => {
-      querySnapshot.forEach (doc => {
-        const data =  {
-          'id': doc.id,
-          'immagine': doc.data().immagine,
-          'nome': doc.data().nome,
-          'costo': doc.data().costo,
-        }
-        this.Servizi.push(data)
-      })
-    }) 
+    db.collection ('Servizi')
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach (doc => {
+          const data =  {
+            'id': doc.data().id,
+            'immagine': doc.data().immagine,
+            'nome': doc.data().nome,
+            'costo': doc.data().costo,
+          }
+          this.Servizi.push(data)
+        })
+      }) 
   },
 
 }
