@@ -11,8 +11,8 @@
         </md-card-media>
 
         <md-card-header>
-          <div class="md-title">{{s.nome}} </div>
-          <div class="md-subhead"> {{s.costo}}</div>
+          <div class="md-title"><span>{{s.nome}} </span></div>
+          <div class="md-subhead"> <span>{{s.costo}}</span></div>
         </md-card-header>
 
           <md-card-actions md-alignment="right">
