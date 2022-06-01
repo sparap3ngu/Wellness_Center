@@ -37,11 +37,7 @@ export default  {
       }
     },
 
-  firestore: function(){
-    return{
-      Servizi: db.collection('Servizi'),
-    }
-  },
+
 
   methods: function ()  {
     
