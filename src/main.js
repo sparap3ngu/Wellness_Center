@@ -36,7 +36,7 @@ const router = new VueRouter({
     { path: '/servizi', name: 'servizi', component: Servizi},
     { path: '/trattamenti/massaggi', name: 'trattamenti/massaggi', component: massaggi},
     { path: '/trattamenti/altro', name: 'trattamenti/altro', component: altro},
-  //{ path: '/dettaglio/:id', name: 'dettaglio', component: Dettaglio},
+    { path: '/dettaglio/:id', name: 'dettaglio', component: Dettaglio},
 
   ]
 })

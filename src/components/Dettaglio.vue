@@ -1,7 +1,7 @@
 <template>
   <div class="page-container">
-    <span>{{s.nome}}</span>
-    <span>{{s.costo}}</span>
+    <span>Nome: {{s.nome}}</span>
+    <span>Costo: {{s.costo}}</span>
     <img :src="s.immagine" alt="immagine del servizio">
   </div>
 </template>
