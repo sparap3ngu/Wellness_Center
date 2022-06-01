@@ -32,6 +32,8 @@ created: function () {
             'immagine': doc.data().immagine,
             'nome': doc.data().nome,
             'costo': doc.data().costo,
+            'descrizione': doc.data().descrizione,
+            'orari': doc.data().orari,
           }
           this.Servizio.push(data)
           console.log(this.Servizio)
