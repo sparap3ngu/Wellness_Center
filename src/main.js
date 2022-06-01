@@ -17,9 +17,6 @@ import massaggi from './components/massaggi.vue'
 import altro from './components/altro.vue'
 
 
-
-
-
 Vue.use(VueCompositionAPI)
 Vue.use(VueRouter)
 Vue.use(VueMaterial)
@@ -37,7 +34,6 @@ const router = new VueRouter({
     { path: '/trattamenti/massaggi', name: 'trattamenti/massaggi', component: massaggi},
     { path: '/trattamenti/altro', name: 'trattamenti/altro', component: altro},
     { path: '/dettaglio/:id', name: 'dettaglio', component: Dettaglio},
-
   ]
 })
 

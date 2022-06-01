@@ -16,7 +16,7 @@
         </md-card-header>
 
           <md-card-actions md-alignment="right">
-              <md-button :to="'/dettaglio/' + s.id"> Dettagli </md-button>
+              <md-button :to="{name: 'dettaglio', params: {id: s.id}}"> Dettagli </md-button>
           </md-card-actions>
       </md-card>
         </div>
@@ -31,7 +31,7 @@
 import db from '../main'
 
 export default  {
-    data: function () {
+  data: function () {
       return{
          Servizi: []
       }

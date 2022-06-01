@@ -1,8 +1,6 @@
 <template>
   <div class="page-container">
-    <span>Nome: {{s.nome}}</span>
-    <span>Costo: {{s.costo}}</span>
-    <img :src="s.immagine" alt="immagine del servizio">
+    ciao
   </div>
 </template>
 
@@ -10,14 +8,14 @@
 import db from '../main'
 
 export default  {
-  data: function (){
-    return {
-      s: null,
-    }
-  },
+    data: function () {
+      return{
+         Servizio: []
+      }
+    },
 
   created: function () {
-    db.collection ('Servizi')
+  db.collection ('Servizi')
     .get()
     .then(querySnapshot => {
       querySnapshot.forEach (doc => {
@@ -27,13 +25,11 @@ export default  {
           'nome': doc.data().nome,
           'costo': doc.data().costo,
         }
-        this.s.push(data)
-        this.$route.id.then(data => {
-          this.s = data.data;
-        })
+        this.Servizi.push(data)
       })
     }) 
-  }
+  },
+
 
   }
 </script>
