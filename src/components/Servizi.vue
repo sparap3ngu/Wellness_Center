@@ -37,7 +37,7 @@ export default  {
       }
     },
 
-  created () {
+  created: function () {
   db.collection ('Servizi')
     .get()
     .then(querySnapshot => {
