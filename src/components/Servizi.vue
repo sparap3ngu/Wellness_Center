@@ -16,7 +16,13 @@
         </md-card-header>
 
           <md-card-actions md-alignment="right">
-              <md-button :to="'/dettaglio/' + s.id">Dettagli</md-button>
+              <md-button 
+              :to="{
+                path: '/dettaglio/:id', 
+                name: 'dettaglio', 
+                component: Dettaglio,
+                params:  {id: s.id},
+                }"> Dettagli </md-button>
           </md-card-actions>
       </md-card>
         </div>
