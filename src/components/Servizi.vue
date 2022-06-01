@@ -37,12 +37,6 @@ export default  {
       }
     },
 
-
-
-  methods: function ()  {
-    
-  },
-
   created: function () {
     db.collection ('Servizi')
       .get()

@@ -1,11 +1,11 @@
 <template>
   <div class="page-container">
-    <div >
+    <div v-for="s in Servizio" :key="s.id">
       <p>
         Nome:
       </p>
-      <p>
-        {{Servizio.nome}}
+      <p >
+        {{s.nome}}
       </p>
     </div>
   </div>
@@ -18,25 +18,25 @@ export default  {
   data: function () {
     return{
       idServizio: this.$route.params.id,
-      Servizio: {},
+      Servizio: [],
     }
   },
 
-  /*firestore: function(){
-    return{
-      Servizio: db.collection('Servizi').where( "id", "==", this.idServizio)
-    }
-  },*/
-
-  created: function () {
+created: function () {
     db.collection ('Servizi')
-      .get()
-      .where( "id", "==", this.idServizio)
-      .then(doc => {
-        this.Servizio = doc.data()
-      })
-  }
-
+    .doc(this.idServizio)
+    .get()
+    .then (doc => {
+          const data =  {
+            'id': doc.data().id,
+            'immagine': doc.data().immagine,
+            'nome': doc.data().nome,
+            'costo': doc.data().costo,
+          }
+          this.Servizio.push(data)
+          console.log(this.Servizio)
+        })
+    }
 }
 </script>
 
