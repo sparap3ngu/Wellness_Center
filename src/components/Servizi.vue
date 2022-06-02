@@ -37,20 +37,20 @@ export default  {
       }
     },
 
-  created: function () {
-    db.collection ('Servizi')
-      .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach (doc => {
-          const data =  {
-            'id': doc.data().id,
-            'immagine': doc.data().immagine,
-            'nome': doc.data().nome,
-            'costo': doc.data().costo,
-          }
-          this.Servizi.push(data)
+    created: function () {
+      db.collection ('Servizi')
+        .get()
+        .then(querySnapshot => {
+          querySnapshot.forEach (doc => {
+            const data =  {
+              'id': doc.data().id,
+              'immagine': doc.data().immagine,
+              'nome': doc.data().nome,
+              'costo': doc.data().costo,
+            }
+            this.Servizi.push(data)
+          })
         })
-      }) 
   },
 
 }

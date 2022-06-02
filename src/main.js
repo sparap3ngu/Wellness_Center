@@ -37,8 +37,7 @@ const router = new VueRouter({
     { path: '/servizi/:id', name: 'dettaglioServizi', component: DettaglioServizi},
     { path: '/massaggi/:id', name: 'dettaglioMassagi', component: DettaglioMassaggi},
     { path: '/altro/:id', name: 'dettaglioAltro', component: DettaglioAltro},
-
-  ]
+  ],
 })
 
 const app = createApp({
