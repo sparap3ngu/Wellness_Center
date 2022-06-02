@@ -31,7 +31,6 @@ const router = new VueRouter({
     { path: '/', redirect: '/home'},
     { path: '/home', name: 'home', component: Home},
     { path: '/contatti', name: 'contatti', component: Contatti},
-  //{ path: '/dettaglio', name: 'dettaglio', component: Dettaglio},
     { path: '/servizi', name: 'servizi', component: Servizi},
     { path: '/trattamenti/massaggi', name: 'trattamenti/massaggi', component: massaggi},
     { path: '/trattamenti/altro', name: 'trattamenti/altro', component: altro},
