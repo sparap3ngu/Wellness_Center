@@ -32,14 +32,36 @@ export default  {
 </script>
 
 <style scoped>
+
+@media only screen and (max-width: 1150px) {
     .carousel {
         position: relative;
         overflow: hidden;
         width: 100%;
         height: 350px;
     }
+}
 
-    button {
+@media only screen and (min-width: 1150px) {
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 500px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 750px;
+    }
+}
+
+
+    button{
         position: absolute;
         top: calc(50% - 20px);
         opacity:0.6;
