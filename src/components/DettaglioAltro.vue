@@ -1,19 +1,19 @@
 <template>
   <div class="page-container">
-    <div v-for="s in Massaggio" :key="s.id">
+    <div v-for="t in Trattamento" :key="t.id">
     <div class="md-layout md-gutter">
       <div class="imgContainer md-layout-item md-xsmall-size-100 md-medium-size-50">
-        <img class="img" :src="s.immagine" alt="immagine servizio" />
+        <img class="img" :src="t.immagine" alt="immagine servizio" />
       </div>
       <div class="md-layout-item md-xsmall-size-100 md-medium-size-50">
-        <h1>{{s.nome}}</h1>
+        <h1>{{t.nome}}</h1>
         <h3>Informazioni utili:</h3>
-        <p>Costo: {{s.costo}}</p>
-        <p>Durata: {{s.durata}}</p>
+        <p>Costo: {{t.costo}}</p>
+        <p>Durata: {{t.durata}}</p>
       </div>
       <div class="md-layout-item md-xsmall-size-100 md-medium-size-100">
         <h3>Benefici:</h3>
-        <p>{{s.descrizione}}</p>
+        <p>{{t.descrizione}}</p>
       </div>
     </div>
     </div>
@@ -26,14 +26,14 @@ import db from '../main'
 export default  {
   data: function () {
     return{
-      idMassaggio: this.$route.params.id,
-      Massaggio: [],
+      idTrattamento: this.$route.params.id,
+      Trattamento: [],
     }
   },
 
 created: function () {
-    db.collection ('Massaggi')
-    .doc(this.idMassaggio)
+    db.collection ('Trattamenti')
+    .doc(this.idTrattamento)
     .get()
     .then (doc => {
           const data =  {
@@ -44,7 +44,7 @@ created: function () {
             'descrizione': doc.data().descrizione,
             'durata': doc.data().durata,
           }
-          this.Massaggio.push(data)
+          this.Trattamento.push(data)
         })
     }
 }
