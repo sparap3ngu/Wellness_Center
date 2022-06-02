@@ -213,9 +213,24 @@ export default  {
 </script>
 
 <style scoped>
+
+@media only screen and (max-width: 760px) {
   #imgCarousel {
-    min-width:fit-content;
+    min-height: 350px;
+    min-width: 760px;
+    height: 350px;
+    width:auto;
   }
+}
+
+@media only screen and (min-width: 1440px) {
+    #imgCarousel {
+        min-height: 350px;
+        min-width: 1700px;
+        height: auto;
+        width: 100%;
+    }
+}
 
   .newsletter  {
     height: auto;
