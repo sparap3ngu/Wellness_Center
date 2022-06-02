@@ -16,7 +16,7 @@
         </md-card-header>
 
           <md-card-actions md-alignment="right">
-              <md-button :to="{name: 'dettaglio', params: {id: s.id}}"> Dettagli </md-button>
+              <md-button :to="{name: 'dettaglioServizi', params: {id: s.id}}"> Dettagli </md-button>
           </md-card-actions>
       </md-card>
         </div>
@@ -75,5 +75,10 @@ h1 {
 .immagini  {
   height: 200px;
   overflow: hidden;
+}
+
+.md-title {
+  overflow: hidden;
+  text-overflow:ellipsis;  
 }
 </style>
