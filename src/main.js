@@ -10,7 +10,9 @@ import 'vue-material/dist/theme/black-green-light.css'
 
 import App from './App.vue'
 import Contatti from './components/Contatti.vue'
-import Dettaglio from './components/Dettaglio.vue'
+import DettaglioServizi from './components/DettaglioServizi.vue'
+import DettaglioMassaggi from  './components/DettaglioMassaggi.vue'
+import DettaglioAltro from  './components/DettaglioAltro.vue'
 import Home from './components/Home.vue'
 import Servizi from './components/Servizi.vue'
 import massaggi from './components/massaggi.vue'
@@ -33,7 +35,10 @@ const router = new VueRouter({
     { path: '/servizi', name: 'servizi', component: Servizi},
     { path: '/trattamenti/massaggi', name: 'trattamenti/massaggi', component: massaggi},
     { path: '/trattamenti/altro', name: 'trattamenti/altro', component: altro},
-    { path: '/dettaglio/:id', name: 'dettaglio', component: Dettaglio},
+    { path: '/servizi/:id', name: 'dettaglioServizi', component: DettaglioServizi},
+    { path: '/massaggi/:id', name: 'dettaglioMassagi', component: DettaglioMassaggi},
+    { path: '/altro/:id', name: 'dettaglioAltro', component: DettaglioAltro},
+
   ]
 })
 
