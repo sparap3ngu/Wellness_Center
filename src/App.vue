@@ -13,15 +13,7 @@
               Wellness Center
             </h3>
           </router-link>
-                    
-                    
-        <!--div>
-          <md-tabs class="md-primary" md-alignment="right">
-            <md-tab id="tab-trattamenti" md-label="Trattamenti" to="/trattamenti"></md-tab>
-            <md-tab id="tab-servizi" md-label="Servizi" to="/servizi"></md-tab>
-            <md-tab id="tab-contatti" md-label="Contatti" to="/contatti"></md-tab>
-          </md-tabs>
-        </div--> 
+
 
           <div id="toolbar" class="md-toolbar-section-end">
               <md-button class="toolbarButton" to="/home">Home</md-button>
@@ -30,13 +22,6 @@
               <md-button class="toolbarButton" to="contatti">Contatti</md-button>
           </div>
         </div>
- 
-       <!--div class="md-toolbar-row">
-          <md-tabs class="md-primary md-toolbar-section-end" md-alignment="fixed" >
-            <md-tab id="tab-massaggi" md-label="Massaggi" to="/trattamenti/massaggi" exact> </md-tab>
-            <md-tab id="tab-altro" md-label="Altro" to="/trattamenti/altro"> </md-tab>
-          </md-tabs>
-       </!--div-->
        
     </md-app-toolbar>
 
@@ -97,7 +82,6 @@
 </template>
 
 <script>
-//import router from './main.js'
 
 export default  {
   name: "App",
@@ -142,6 +126,7 @@ export default  {
   .md-app-content {
     position: relative;
   }
+  
   .footer {
     background: #cccccc;
     width: 100%;
