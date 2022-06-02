@@ -137,9 +137,7 @@ export default  {
 
   created () {
     this.readData();
-
   },
-
 
   methods:  {
     next(){
@@ -162,18 +160,19 @@ export default  {
 
     readData(){
       db.collection ('Recensioni')
-    .get()
-    .then(querySnapshot => {
-      querySnapshot.forEach (doc =>  {
-        const data =  {
-          'utente': doc.data().utente,
-          'descrizione': doc.data().descrizione,
-          'createdAt': doc.data().createdAt,
-        }
-        this.Recensioni.push(data)      
-      })
-    }) 
-    },
+      .orderBy("createdAt", "desc")
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach (doc =>  {
+          const data =  {
+            'utente': doc.data().utente,
+            'descrizione': doc.data().descrizione,
+            'createdAt': doc.data().createdAt,
+          }
+          this.Recensioni.push(data)      
+        })
+      }) 
+      },
 
     saveData(){
     db.collection("Recensioni")
