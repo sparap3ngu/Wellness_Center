@@ -22,26 +22,47 @@ export default  {
 </script>
 
 <style scoped>
-    .carouselItem  {
+
+@media only screen and (max-width: 410px) {
+    .carouselItem{
         position: absolute;
         top:0;
-        /*left: -50%;*/
-        bottom:0;
+        left:-80%;
     }
+}
 
-    @media only screen and (min-width: 620px) {
+@media only screen and (min-width: 410px) {
     .carouselItem{
-        left:-50%;
+        position: absolute;
+        top:0;
+        left:0;
     }
-  }
+}
 
-    @media only screen and (max-width: 620px) {
-    .carouselItem {
-        left:-100%;
+@media only screen and (min-width: 760px) {
+     .carouselItem  {
+        position: absolute;
+        top:0;
+        left:0;
     }
-  }
-    
-    
+}
+
+@media only screen and (min-width: 1440px) {
+     .carouselItem  {
+        position: relative;
+        top:0;
+        left:0;
+    }
+}
+
+@media only screen and (min-width: 2500px) {
+     .carouselItem  {
+        position: relative;
+        top:-50%;
+        left:0;
+    }
+}
+   
     .left-enter-active {
         animation: leftInAnimation 0.4s ease-in-out
     }
