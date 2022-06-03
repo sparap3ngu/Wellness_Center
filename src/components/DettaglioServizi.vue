@@ -1,14 +1,17 @@
 <template>
-  <div class="dettaglioServizi">
+  <div id="dettaglioServizi">
+
+<!--Impostazione del layout della pagina-->
     <div v-for="s in Servizio" :key="s.id">
     <div class="md-layout md-gutter">
-
+<!--Sezione per l'immagine (dai 600px in su)-->
       <div class="md-layout-item md-xsmall-size-0 md-medium-size-25 md-large-size-25 md-xlarge-size-25">
         <div class="imgContainer">
           <img class="img" :src="s.immagine" alt="immagine servizio" />
         </div>
       </div>
 
+<!--Sezione del contenuto (e per l'immagine dai 599px in giù)-->
       <div class="md-layout-item md-xsmall-size-100 md-medium-size-75 md-large-size-75 md-xlarge-size-75">
         <img class="img2" :src="s.immagine" alt="immagine servizio" />
         <h1>{{s.nome}}</h1>
@@ -34,12 +37,14 @@ export default  {
   name: "dettaglioServizi",
   data: function () {
     return{
+//Catturo il parametro id della route 
       idServizio: this.$route.params.id,
       Servizio: [],
     }
   },
 
 created: function () {
+//Passo tutti i dati del trattamento cliccato all'array Trattamento (da 1 elemento)
     db.collection ('Servizi')
     .doc(this.idServizio)
     .get()
@@ -61,7 +66,7 @@ created: function () {
 
 
 <style scoped>
-
+/* CSS per la visualizzazione corretta dell'immagine */
   .imgContainer {
     height: 100%; 
     width: 100%; 
@@ -87,8 +92,7 @@ created: function () {
   }
 }
 
-
-
+/* CSS per la pagina */
 h1, p, h3  {
   margin: 20px;
 }
