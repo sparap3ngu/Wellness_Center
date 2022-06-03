@@ -120,6 +120,7 @@ export default  {
   name: "home",
   data: function () {
     return{
+//Carosello
       carItems:[
         img1,
         img2,
@@ -127,6 +128,8 @@ export default  {
       ],
       visibleItem: 0,
       direction: 'left',
+
+//Recensioni
       Recensioni: [],
       dati:  {
         utente: null,
@@ -136,10 +139,13 @@ export default  {
   },
 
   created () {
+//chiama la funzione readData appena viene creata la pagina
     this.readData();
   },
 
   methods:  {
+
+//Scorrimento del carosello
     next(){
       if (this.visibleItem == this.carItems.length - 1) {
         this.visibleItem = 0;
@@ -158,6 +164,7 @@ export default  {
       this.direction = 'right'
     },
 
+//Prende le recensioni dal db e le passa all'array Recensioni
     readData(){
       db.collection ('Recensioni')
       .orderBy("createdAt", "desc")
@@ -174,6 +181,7 @@ export default  {
       }) 
       },
 
+//Scrive sul db la recensione scritta dall'utente
     saveData(){
     db.collection("Recensioni")
     .doc()
@@ -193,6 +201,7 @@ export default  {
     })
     },
 
+//Cancella il campo di input dopo che è stato premuto invia
     reset (){
       Object.assign(this.$data, this.$options.data.apply(this));
     },
@@ -208,6 +217,7 @@ export default  {
 
 <style scoped>
 
+/* Media query per gestire la responsiveness delle immagini del carosello */
 @media only screen and (max-width: 760px) {
   #imgCarousel {
     min-height: 350px;
@@ -226,6 +236,7 @@ export default  {
     }
 }
 
+/* Sezione newsletter */
   .newsletter  {
     height: auto;
     padding-left: 20px;
@@ -242,6 +253,7 @@ export default  {
 
   }
 
+/* CSS per la pagina */
   #chiSiamo{
     text-align: center;
     padding: 20px 20px 50px;
@@ -259,6 +271,8 @@ export default  {
     text-align: left;
     margin: 30px 50px 5px;
   }
+
+  /* CSS per la sezione recensioni */
   .recensioni {
      margin: 0px;
   }
