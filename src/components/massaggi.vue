@@ -52,7 +52,7 @@ export default  {
     },
 
   created () {
-//Funzione che, nonappena viene creata la pagina, prende i dati dal db e li passa all'array Trattamenti
+//Funzione che, nonappena viene creata la pagina, prende i dati dal db e li passa all'array Massaggi
   db.collection ('Massaggi')
     .get()
     .then(querySnapshot => {
