@@ -1,13 +1,16 @@
 <template>
-    <transition :name="direction" mode="in-out">
-        <div v-show="visibleItem === index" class="carouselItem">
-            <slot></slot>
-        </div>
-    </transition>
+    <div class="carouselItem">
+        <transition :name="direction" mode="in-out">
+            <div v-show="visibleItem === index" class="carouselItem">
+                <slot></slot>
+            </div>
+        </transition>
+    </div>
 </template>
 
 <script>
 export default  {
+    name: "carouselItem",
     props: [
         'visibleItem',
         'index',

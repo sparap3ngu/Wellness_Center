@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="servizi">
 
 <!--Contenuto della pagina-->
     <h1> Scopri tutti i nostri servizi! </h1>
@@ -38,6 +38,7 @@
 import db from '../main'
 
 export default  {
+  name: "Servizi",
   data: function () {
       return{
 //Array che raccoglie tutti i servizi del db

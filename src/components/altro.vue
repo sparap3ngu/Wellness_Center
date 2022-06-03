@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="altro">
 
 <!--Tabs di navigazione tra le due sezioni di trattamenti -->
      <md-tabs class="md-primary" md-alignment="fixed" md-active-tab="tab-altro">
@@ -44,12 +44,13 @@
 import db from '../main'
 
 export default  {
-    data: function () {
-      return{
+  name: "altro",
+  data: function () {
+    return{
 //Array che raccoglie tutti i trattamenti del db
-         Trattamenti: []
-      }
-    },
+        Trattamenti: []
+    }
+  },
 
   created () {
 //Funzione che, nonappena viene creata la pagina, prende i dati dal db e li passa all'array Trattamenti

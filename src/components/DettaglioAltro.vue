@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="dettaglioAltro">
     <div v-for="t in Trattamento" :key="t.id">
     <div class="md-layout md-gutter">
       <div class="md-layout-item md-xsmall-size-0 md-medium-size-25 md-large-size-25 md-xlarge-size-25">
@@ -26,6 +26,7 @@
 import db from '../main'
 
 export default  {
+  name: "dettaglioAltro",
   data: function () {
     return{
       idTrattamento: this.$route.params.id,

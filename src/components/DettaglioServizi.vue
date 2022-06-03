@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="dettaglioServizi">
     <div v-for="s in Servizio" :key="s.id">
     <div class="md-layout md-gutter">
 
@@ -31,6 +31,7 @@
 import db from '../main'
 
 export default  {
+  name: "dettaglioServizi",
   data: function () {
     return{
       idServizio: this.$route.params.id,

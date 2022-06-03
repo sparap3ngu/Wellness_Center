@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="massaggi">
 
 <!--Tabs di navigazione tra le due sezioni di trattamenti -->
      <md-tabs class="md-primary" md-alignment="fixed" md-active-tab="tab-massaggi" >
@@ -44,6 +44,7 @@
 import db from '../main'
 
 export default  {
+  name:"massaggi",
     data: function () {
       return{
 //Array che raccoglie tutti i massaggi del db

@@ -1,6 +1,5 @@
 <template>
- 
-  <div class="page-container"> 
+  <div class="Contatti"> 
 
     <h1>
       I nostri contatti
@@ -76,7 +75,7 @@
 import db from '../main.js'
  
 export default  {
-
+  name:"Contatti",
   data: function () {
       return{
          Personale: []

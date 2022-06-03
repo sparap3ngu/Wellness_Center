@@ -1,5 +1,5 @@
 <template>
-  <div class="page-container">
+  <div class="dettaglioMassaggi">
     <div v-for="m in Massaggio" :key="m.id">
     <div class="md-layout md-gutter">
       <div class="md-layout-item md-xsmall-size-0 md-medium-size-25 md-large-size-25 md-xlarge-size-25">
@@ -29,6 +29,7 @@
 import db from '../main'
 
 export default  {
+  name:"dettaglioMassaggi",
   data: function () {
     return{
       idMassaggio: this.$route.params.id,
