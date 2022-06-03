@@ -1,31 +1,27 @@
 <template>
-    <div class="carouselItem">
-        <transition :name="direction" mode="in-out">
+<!--Impostazione del singolo elemento del carosello-->
+        <transition :name="direction" mode="in-out" id="carouselItem">
             <div v-show="visibleItem === index" class="carouselItem">
-                <slot></slot>
+                <slot> <!--Immagine "passata" dalla Home--> </slot>
             </div>
         </transition>
-    </div>
 </template>
 
 <script>
 export default  {
     name: "carouselItem",
+//Impostazione delle proprietà di carouselItem, che vengono poi utilizzate nella Home per
     props: [
         'visibleItem',
         'index',
         'direction',
     ],
-    data: function() {
-        return {
-
-        }
-    }
   }
 </script>
 
 <style scoped>
-
+/* Media query per gestire la responsiveness del carosello */
+    /* 0 - 410px*/ 
 @media only screen and (max-width: 410px) {
     .carouselItem{
         position: absolute;
@@ -33,7 +29,7 @@ export default  {
         left:-80%;
     }
 }
-
+    /* 410 - 760px */
 @media only screen and (min-width: 410px) {
     .carouselItem{
         position: absolute;
@@ -41,7 +37,7 @@ export default  {
         left:0;
     }
 }
-
+    /* 760 - 1440px */
 @media only screen and (min-width: 760px) {
      .carouselItem  {
         position: absolute;
@@ -49,7 +45,7 @@ export default  {
         left:0;
     }
 }
-
+    /* 1440 - 2500px */
 @media only screen and (min-width: 1440px) {
      .carouselItem  {
         position: relative;
@@ -57,7 +53,7 @@ export default  {
         left:0;
     }
 }
-
+    /* 2500+ px */
 @media only screen and (min-width: 2500px) {
      .carouselItem  {
         position: relative;
@@ -65,7 +61,9 @@ export default  {
         left:0;
     }
 }
-   
+
+/* Gestione delle animazioni del carosello */
+    /* Da destra a sinistra */
     .left-enter-active {
         animation: leftInAnimation 0.4s ease-in-out
     }
@@ -82,7 +80,8 @@ export default  {
         from { transform: translateX(0%) }
         to  { transform: translateX(-100%) }        
     }
-        
+
+    /* Da destra a sinistra */
     .right-enter-active {
         animation: rightInAnimation 0.4s ease-in-out
     }
