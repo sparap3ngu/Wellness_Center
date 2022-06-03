@@ -1,5 +1,5 @@
 <template>
-  <div class="servizi">
+  <div id="servizi">
 
 <!--Contenuto della pagina-->
     <h1> Scopri tutti i nostri servizi! </h1>
@@ -16,7 +16,7 @@
           <img id="immagini" :src="s.immagine" alt="People" >
         </md-card-media>
 
-        <md-card-header>
+        <md-card-header class="header">
           <div class="md-title"><span class="nome">{{s.nome}} </span></div>
           <div class="md-subhead"> <span class="costo">{{s.costo}}</span></div>
         </md-card-header>
@@ -88,5 +88,10 @@ h1 {
 .md-title {
   overflow: hidden;
   text-overflow:ellipsis;  
+}
+
+.header{
+  height: 100px;
+
 }
 </style>

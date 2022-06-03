@@ -22,7 +22,7 @@
           <img id="immagini" :src="t.immagine" alt="People" >
         </md-card-media>
 
-        <md-card-header>
+        <md-card-header class="header">
           <div class="md-title">{{t.nome}} </div>
           <div class="md-subhead"> {{t.costo}}</div>
         </md-card-header>
@@ -93,5 +93,9 @@ h1{
 .md-title {
   overflow: hidden;
   text-overflow:ellipsis;  
+}
+
+.header{
+  height: 100px;
 }
 </style>

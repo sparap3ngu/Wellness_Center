@@ -1,5 +1,5 @@
 <template>
-  <div class="massaggi">
+  <div id="massaggi">
 
 <!--Tabs di navigazione tra le due sezioni di trattamenti -->
      <md-tabs class="md-primary" md-alignment="fixed" md-active-tab="tab-massaggi" >
@@ -22,7 +22,7 @@
           <img id="immagini" :src="m.immagine" alt="People" >
         </md-card-media>
 
-        <md-card-header> 
+        <md-card-header class="header"> 
           <div class="md-title">{{m.nome}} </div>
           <div class="md-subhead"> {{m.costo}}</div>
         </md-card-header>
@@ -94,4 +94,9 @@ h1 {
   overflow: hidden;
   text-overflow:ellipsis;  
 }
+
+.header{
+  height: 100px;
+}
+
 </style>
