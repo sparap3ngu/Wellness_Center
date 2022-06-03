@@ -92,6 +92,5 @@ h1 {
 
 .header{
   height: 100px;
-
 }
 </style>

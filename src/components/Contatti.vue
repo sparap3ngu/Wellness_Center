@@ -1,5 +1,5 @@
 <template>
-  <div class="Contatti"> 
+  <div id="Contatti"> 
 
 <!--Sezione contatti-->
     <h1>
