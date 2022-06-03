@@ -2,17 +2,19 @@
   <div class="page-container">
     <div v-for="m in Massaggio" :key="m.id">
     <div class="md-layout md-gutter">
-      <div class="imgContainer md-layout-item md-xsmall-size-100 md-medium-size-50">
-        <img class="img" :src="m.immagine" alt="immagine servizio" />
+      <div class="md-layout-item md-xsmall-size-0 md-medium-size-25 md-large-size-25 md-xlarge-size-25">
+        <div class="imgContainer">
+          <img class="img" :src="m.immagine" alt="immagine servizio" />
+        </div>
       </div>
-      <div class="md-layout-item md-xsmall-size-100 md-medium-size-50">
+
+      <div class="md-layout-item md-xsmall-size-100 md-medium-size-75 md-large-size-75 md-xlarge-size-75">
+        <img class="img2" :src="m.immagine" alt="immagine servizio" />
         <h1>{{m.nome}}</h1>
         <h3>Informazioni utili:</h3>
         <p>Costo: {{m.costo}}</p>
         <p>Durata: {{m.durata}}</p>
         <p>Massaggiatrice: {{m.massaggiatrice}}</p>
-      </div>
-      <div class="md-layout-item md-xsmall-size-100 md-medium-size-100">
         <h3>Benefici:</h3>
         <p>{{m.benefici}}</p>
         <h3>Descrizione:</h3>
@@ -58,21 +60,29 @@ created: function () {
 
 
 <style scoped>
-.imgContainer {
-    height: 300px; 
-    width: 300px; 
+  .imgContainer {
+    height: 100%; 
+    width: 100%; 
     position: relative;
+    overflow: hidden;
+    align-content: center;
 }
 .img {
-    max-height: 100%;
-    max-width: 100%;
-    width: auto;
-    height: auto;
+    height: 100%;
+    min-width: 1000px;
     position: absolute;
     top: 0;
-    bottom: 0;
-    left:0;
-    margin:10px;
+    left:-50%;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+}
+
+@media only screen and (min-width: 599px){
+  .img2 {
+    display: none;
+  }
 }
 
 h1, p, h3  {
