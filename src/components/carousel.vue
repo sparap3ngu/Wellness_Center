@@ -1,8 +1,9 @@
-
 <template>
-    <div class="carousel">
-        <slot></slot>
 
+<!--Impostazione della struttura del carosello-->
+    <div class="carousel">
+        <slot> <!--carouselItem passato dalla Home--> </slot>
+<!--Buttons per il cambio item-->
         <md-button class="next md-icon-button md-raised" @click="next">
             <md-icon>chevron_right</md-icon>
         </md-button>
@@ -15,15 +16,12 @@
 <script>
 export default  {
     name:"carousel",
-    data: function() {
-        return {
-
-        }
-    },
     methods: {
+//Dichiaro la funzione next e la passo al parent (Home) dove potrà essere settata e triggerata
         next(){
             this.$emit('next');
         },
+//Dichiaro la funzione prev e la passo al parent (Home) dove potrà essere settata e triggerata
         prev (){
             this.$emit('prev');
         }
@@ -33,7 +31,7 @@ export default  {
 </script>
 
 <style scoped>
-
+/* Media query per gestire la responsiveness del carosello */
 @media only screen and (max-width: 1150px) {
     .carousel {
         position: relative;
@@ -61,7 +59,7 @@ export default  {
     }
 }
 
-
+/* CSS per i buttons del carosello */
     button{
         position: absolute;
         top: calc(50% - 20px);
@@ -71,7 +69,6 @@ export default  {
     .next {
         right: 0;
         margin: 6px;
-        
     }
 
     .prev{
