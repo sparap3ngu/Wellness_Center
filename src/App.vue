@@ -1,9 +1,12 @@
 <template>
   <div id="App">
+
+<!--Template dell'applicazione-->
+<!--Navigation bar-->
     <md-app md-mode="fixed" md-waterfall >
       <md-app-toolbar class="md-primary">
 
-        <div class="md-toolbar-row">
+<!--Intestazione della navbar-->
           <md-button id="menu" class="md-icon-button" @click="menuVisible = !menuVisible">
             <md-icon>menu</md-icon>
           </md-button>
@@ -14,17 +17,16 @@
             </h3>
           </router-link>
 
-
+<!--Buttons della navbar-->
           <div id="toolbar" class="md-toolbar-section-end">
               <md-button class="toolbarButton" to="/home">Home</md-button>
               <md-button class="toolbarButton" to="/trattamenti/massaggi" >Trattamenti</md-button>
               <md-button class="toolbarButton" to="/servizi">Servizi</md-button>
               <md-button class="toolbarButton" to="contatti">Contatti</md-button>
           </div>
-        </div>
-       
     </md-app-toolbar>
 
+<!--Impostazione della navigation drawer-->
     <md-app-drawer :md-active.sync="menuVisible">
         <md-toolbar class="md-primary" md-elevation="0">
           <h3>Menù</h3>
@@ -35,6 +37,7 @@
           </div>
         </md-toolbar>
 
+<!--Lista di navigazione del drower-->
         <md-list >
           <md-list-item to="/home">
             <span class="md-list-item-text">Home</span>
@@ -49,11 +52,14 @@
             <span class="md-list-item-text">Contatti</span>
           </md-list-item>
         </md-list>
-      </md-app-drawer>
+    </md-app-drawer>
    
+<!--Contenuto dell'app-->
     <md-app-content>
         <router-view />
-        <footer >
+
+<!--Creazione del footer-->
+        <footer>
           <div class="footer">
             <p>
               WELNESSCENTER - 
@@ -73,12 +79,8 @@
           </div>
         </footer>
     </md-app-content>
-
-
-
   </md-app>
   </div>
-  
 </template>
 
 <script>
@@ -94,6 +96,20 @@ export default  {
 </script>
 
 <style>
+/* Media query per l'alternanza navbar-drawer*/ 
+  @media only screen and (min-width: 620px) {
+    #menu {
+      display: none;
+    }
+  }
+
+    @media only screen and (max-width: 620px) {
+    #toolbar {
+      display: none;
+    }
+  }
+
+/*CSS per la pagina*/
   .md-app-container{
     height: 100vh;
   }
@@ -111,18 +127,8 @@ export default  {
     width:40px;
     height: auto
   }
-  
-  @media only screen and (min-width: 620px) {
-    #menu {
-      display: none;
-    }
-  }
 
-    @media only screen and (max-width: 620px) {
-    #toolbar {
-      display: none;
-    }
-  }
+
   .md-app-content {
     position: relative;
   }
