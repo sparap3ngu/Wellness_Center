@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="home">
 
 <!--Inserzione del carosello-->
     <carousel @next="next" @prev="prev">
@@ -65,13 +65,14 @@
 <md-divider></md-divider>
 
 <!--Sezione recensioni-->
+<!--Scrittura della recensione-->
     <h3>Abbiamo molto a cuore l’opinione dei nostri clienti, se ti fa piacere lasciaci una recensione!</h3>
-    <div class="recensioni md-layout md-gutter">
+    <div class="md-layout md-gutter">
         <div class="md-layout-item  md-xlarge-size-25 md-large-size-25 md-medium-size-25 md-xsmall-size-100">
           <md-field>
             <label> Utente </label>
             <md-input
-            class="utente"
+            class="utenteInput"
             type="text"
             v-model="dati.utente"></md-input>
           </md-field>
@@ -89,19 +90,18 @@
         </div>
     </div>
 
+<!--Lettura delle recensioni-->
     <h3>Dicono di noi</h3>
-    <div>
       <div class="leggiRec">          
         <div class="unaRec"  
         v-for="r in Recensioni" 
         :key="r.id"> 
-            <h5 class="nomeUtente">Nome utente:</h5>
-            <p class="nomeUtente"> {{r.utente}} </p>
-            <hr>
-            <p> {{r.descrizione}}</p>  
-          </div>
+          <h5 class="nomeUtente">Nome utente:</h5>
+          <p class="nomeUtente"> {{r.utente}} </p>
+          <hr>
+          <p> {{r.descrizione}}</p>  
         </div>  
-      </div> 
+      </div>  
   </div>
 </template>
 
@@ -145,7 +145,7 @@ export default  {
 
   methods:  {
 
-//Scorrimento del carosello
+//Setto il comportamento delle funzioni next e prev in modo che quando vengono chiamate dal child (carousel) verranno triggerate
     next(){
       if (this.visibleItem == this.carItems.length - 1) {
         this.visibleItem = 0;
@@ -273,13 +273,21 @@ export default  {
   }
 
   /* CSS per la sezione recensioni */
-  .recensioni {
-     margin: 0px;
-  }
-  .utente{
+  /* Scrittura */
+  .utenteInput{
     margin:8px 0px;
   }
 
+/* Lettura */
+.leggiRec {
+  height:500px;
+  overflow:scroll;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0px 30px;
+  box-shadow: inset 0px 15px 8px #dedede;
+
+}
   .unaRec {
     background-color: #cccccc;
     height: auto;
@@ -292,9 +300,8 @@ export default  {
   }
 
   .unaRec p {
-    padding:10px 0px;
+    padding:10px 10px;
     text-align: center;
-
   }
 
   .nomeUtente {
