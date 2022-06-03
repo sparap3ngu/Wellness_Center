@@ -1,10 +1,16 @@
 <template>
   <div class="page-container">
+
+<!--Contenuto della pagina-->
     <h1> Scopri tutti i nostri servizi! </h1>
+
+<!--Impostazione del layout di cards-->
     <div class="md-layout" >
       <div class="md-layout-item md-large-size-20 md-xlarge-size-20 md-medium-size-33 md-xsmall-size-100" 
       v-for="s in Servizi" :key="s.id">
-        <div >
+
+<!--Impostazione della card-->
+    <div>
       <md-card id="cards">
         <md-card-media class="immagini">
           <img id="immagini" :src="s.immagine" alt="People" >
@@ -15,6 +21,7 @@
           <div class="md-subhead"> <span class="costo">{{s.costo}}</span></div>
         </md-card-header>
 
+<!--Navigazione al dettaglio-->
           <md-card-actions md-alignment="right">
               <md-button :to="{name: 'dettaglioServizi', params: {id: s.id}}"> Dettagli </md-button>
           </md-card-actions>
@@ -33,11 +40,13 @@ import db from '../main'
 export default  {
   data: function () {
       return{
+//Array che raccoglie tutti i servizi del db
          Servizi: []
       }
     },
 
     created: function () {
+//Funzione che, nonappena viene creata la pagina, prende i dati dal db e li passa all'array Servizi
       db.collection ('Servizi')
         .get()
         .then(querySnapshot => {
@@ -58,7 +67,7 @@ export default  {
 
 
 <style scoped>
-
+/* CSS per la pagina */
 h1 {
   text-align: center;
   margin-top: 50px;
@@ -68,10 +77,8 @@ h1 {
   margin-top:40px;
 
 }
- .md-card-header {
-  height:100px;
-}  
 
+/* CSS per le cards */
 .immagini  {
   height: 200px;
   overflow: hidden;
