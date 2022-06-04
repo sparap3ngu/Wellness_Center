@@ -20,6 +20,9 @@
           <p>Durata: {{t.durata}}</p>
           <h3>Benefici:</h3>
           <p>{{t.descrizione}}</p>
+          <md-button class="md-raised" to="/trattamenti/altro">
+            <span class="material-icons">keyboard_double_arrow_left</span>
+          </md-button>
         </div>
       </div>
     </div>

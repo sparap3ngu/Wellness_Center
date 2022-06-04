@@ -24,6 +24,9 @@
         </ul>
         <h3>Benefici:</h3>
         <p>{{s.descrizione}}</p>
+        <md-button class="md-raised" to="/servizi">
+          <span class="material-icons">keyboard_double_arrow_left</span>
+        </md-button>
       </div>
     </div>
     </div>

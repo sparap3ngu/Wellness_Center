@@ -23,6 +23,9 @@
         <p>{{m.benefici}}</p>
         <h3>Descrizione:</h3>
         <p>{{m.descrizione}}</p>
+        <md-button class="md-raised" to="/trattamenti/massaggi">
+          <span class="material-icons">keyboard_double_arrow_left</span>
+        </md-button>
       </div>
     </div>
     </div>
