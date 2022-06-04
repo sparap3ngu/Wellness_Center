@@ -12,18 +12,6 @@
       </carouselItem>
     </carousel>
 
-<!--Iscrizione alla newsletter-->
-    <!--<div class="newsletter">
-      <h3>Iscrivi alla newsletter</h3>
-      <p>
-        Resta sempre aggiornato sulle nostre promozioni e novità!
-      </p>
-      <md-field>
-        <md-input placeholder="Inserisci la tua email"></md-input>
-        <md-button> Invia </md-button>
-      </md-field>
-    </div>-->
-
 <!--Corpo testuale della home-->
   <div>
     <div id="chiSiamo" class="md-layout md-gutter">
@@ -288,23 +276,6 @@ export default  {
         width: 100%;
     }
 }
-
-/* Sezione newsletter */
-/*  .newsletter  {
-    height: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 1px;
-    background-color: #cccccc;
-    text-align: center;
-  }
-
-  .newsletter h3  {
-    text-align: center;
-    padding-top: 20px;
-    margin: 0;
-
-  }*/
 
 /* CSS per la pagina */
   #chiSiamo{
