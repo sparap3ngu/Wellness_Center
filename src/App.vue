@@ -66,8 +66,7 @@
               Via Calepina, 14 - I-38122 Trento - 
               P.IVA-C.F. 00340520220 - 
               Reception +39 0461 281111 - 
-              info@wellnesscenter.it - 
-              www.wellnesscenter.it
+              info@wellnesscenter.it
             </p>
             <hr>
             <h6> Created by</h6>
