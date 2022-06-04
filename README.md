@@ -57,7 +57,7 @@ Durante il lavoro abbiamo incontrato diverse difficoltà, che però sono state p
 
 
 ### Setup
-Abbiamo utilizzato NODE come package manager e tramite quello abbiamo installato le tecnologie a noi necessarie per lo sviluppo del progetto:
+È stato utilizzato GIT per la gestione delle diverse versioni del prodotto e del lavoro in team durante la progettazione. Inoltre, ci siamo avvalsi di NODE come package manager, tramite il quale abbiamo installato le tecnologie necessarie per lo sviluppo del sito:
 
 ```sh
 npm install
