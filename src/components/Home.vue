@@ -13,7 +13,7 @@
     </carousel>
 
 <!--Iscrizione alla newsletter-->
-    <div class="newsletter">
+    <!--<div class="newsletter">
       <h3>Iscrivi alla newsletter</h3>
       <p>
         Resta sempre aggiornato sulle nostre promozioni e novità!
@@ -22,7 +22,7 @@
         <md-input placeholder="Inserisci la tua email"></md-input>
         <md-button> Invia </md-button>
       </md-field>
-    </div>
+    </div>-->
 
 <!--Corpo testuale della home-->
   <div>
@@ -62,7 +62,7 @@
     </div>
   </div>
 
-<md-divider></md-divider>
+<md-divider />
 
 <!--Sezione recensioni-->
 <!--Scrittura della recensione-->
@@ -101,7 +101,57 @@
           <hr>
           <p> {{r.descrizione}}</p>  
         </div>  
-      </div>  
+      </div> 
+      
+
+<!--Sezione FAQ-->
+    <div> 
+      <h3>Domande frequenti</h3>
+      <div class="full-control">
+        <div class="list">
+          <md-list :md-expand-single="expandSingle">
+
+<!--Lista di FAQ-->
+            <md-list-item md-expand>
+              <md-icon>arrow_right</md-icon>
+                <span class="md-list-item-text">Sono ammessi animali?</span>
+                <md-list slot="md-expand">
+                  <md-list-item class="md-inset">
+                    <i>No, non è possibile introdurre animali all'interno della struttura.</i>
+                  </md-list-item>
+                </md-list>
+            </md-list-item>
+    
+            <md-list-item md-expand>
+              <md-icon>arrow_right</md-icon>
+              <span class="md-list-item-text">Quali sono le modalità di pagamento disponibili?</span>
+              <md-list slot="md-expand">
+                <md-list-item class="md-inset">
+                  <i>Presso la nostra struttura sono accettate tutte le modalità di pagamento sia elettronico che in contanti.</i>
+                </md-list-item>
+              </md-list>
+            </md-list-item>
+    
+            <md-list-item md-expand>
+              <md-icon>arrow_right</md-icon>
+              <span class="md-list-item-text">Esistono cassette di sicurezza dove poter riporre gli oggetti di valore?</span>
+              <md-list slot="md-expand">
+                <md-list-item class="md-inset">
+                  <i>Sì, una volta registrato l'ingresso potrete chiedere che vi venga assegnato un armadietto.</i>
+                </md-list-item>
+              </md-list>
+            </md-list-item>
+          </md-list>
+        </div>
+
+<!--Switch per l'apertura di una FAQ per volta-->
+        <div class="control">
+          <md-switch v-model="expandSingle" class="md-primary">
+            Espandi una domanda alla volta
+          </md-switch>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -134,7 +184,10 @@ export default  {
       dati:  {
         utente: null,
         descrizione: null,
-      }
+      },
+      
+//FAQ
+      expandSingle: true
     }
   },
 
@@ -237,7 +290,7 @@ export default  {
 }
 
 /* Sezione newsletter */
-  .newsletter  {
+/*  .newsletter  {
     height: auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -251,7 +304,7 @@ export default  {
     padding-top: 20px;
     margin: 0;
 
-  }
+  }*/
 
 /* CSS per la pagina */
   #chiSiamo{
@@ -306,5 +359,10 @@ export default  {
 
   .nomeUtente {
     display:inline;
+  }
+
+/* CSS per la sezione FAQ */
+  .control{
+    margin: 0px 30px;
   }
 </style>
