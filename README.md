@@ -22,9 +22,9 @@ Al suo interno troviamo la “Navigation Bar” (con i quattro buttons che condu
 
 Il sito è composto da quattro sezioni principali, che sono sempre raggiungibili attraverso le barre di navigazione.
 È presente inoltre una quinta sezione che risulta secondaria rispetto alle precedenti:  essa è costituita dalla pagina di dettaglio dei vari servizi e vi si accede direttamente cliccando sulla card interessata.
+
 * Home: come di consuetudine è la prima pagina che si incontra durante la navigazione.
-Il primo elemento che la caratterizza è il carosello (a sua volta composto da ulteriori due component esclusivamente funzionali a quest’ultimo: i component "carousel” e “carouselItem”).
-Segue poi la piccola sezione dedicata alle FAQ nella quale l’utente può sceglierne la modalità di visualizzazione attraverso l’apposito Toggle Button. Nella parte centrale sono presenti tre blocchi che descrivono la mission della struttura e mostrano come poterla raggiungere. La parte in basso invece è dedicata alle recensioni che ogni utente può inviare dopo aver indicato il proprio username; queste ultime compariranno in ordine cronologico nella parte sottostante.
+Il primo elemento che la caratterizza è il carosello (a sua volta composto da ulteriori due component esclusivamente funzionali a quest’ultimo: i component "carousel” e “carouselItem”). Nella parte centrale sono presenti tre blocchi che descrivono la mission della struttura e mostrano come poterla raggiungere. La parte in basso invece è dedicata alle recensioni che ogni utente può inviare dopo aver indicato il proprio username; queste ultime compariranno in ordine cronologico nella parte sottostante. Segue poi la piccola sezione dedicata alle FAQ nella quale l’utente può sceglierne la modalità di visualizzazione attraverso l’apposito Toggle Button.
 
 * Trattamenti: la particolarità di questa sezione è la presenza di due TAB che permettono di scegliere se accedere alla parte dei massaggi oppure a quella di tutti gli altri trattamenti proposti dalla struttura. I trattamenti sono mostrati attraverso delle card che contengono un'immagine rappresentativa, il nome ed il costo di ogni singola prestazione.
 Da qui sarà poi possibile accedere alle varie pagine di dettaglio.
