@@ -50,7 +50,7 @@
         <p>
           Ci trovi qui: 
           <br>
-          Via Calepina, 14 - I-38122 Trento
+          Via Calepina, 14 - 38122 Trento
         </p>
         <iframe 
           id="mappa"
